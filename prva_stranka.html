@@ -25,44 +25,44 @@
             <form class="form-horizontal" role="form">
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="inputEmail3" class="control-label">Suma</label>
+                  <label for="inputsuma" class="control-label">Suma</label>
                 </div>
                 <div class="col-sm-6">
-                  <input type="email" class="form-control" id="inputEmail3" placeholder="">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputPassword3" class="control-label">Dlzka splatnosti</label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="password" class="form-control" id="inputPassword3">
+                  <input type="text" id="inputsuma" placeholder="" class="form-control">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="inputPassword3" class="control-label">Fixacia</label>
+                  <label for="inputdlzka" class="control-label">Dlzka splatnosti</label>
                 </div>
                 <div class="col-sm-6">
-                  <input type="password" class="form-control" id="inputPassword3">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputPassword3" class="control-label">Mesačný príjem</label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="password" class="form-control" id="inputPassword3">
+                  <input type="text" class="form-control" id="inputdlzka">
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="inputPassword3" class="control-label">Hodnota domu | bytu
+                  <label for="inputfix" class="control-label">Fixacia</label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputfix">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <label for="inputmes" class="control-label">Mesačný príjem</label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="inputmes">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <label for="inputhod" class="control-label">Hodnota domu | bytu
                     <sup>1</sup>
                   </label>
                 </div>
                 <div class="col-sm-6">
-                  <input type="password" class="form-control" id="inputPassword3">
+                  <input type="text" class="form-control" id="inputhod">
                 </div>
               </div>
             </form>
@@ -75,25 +75,34 @@
             </div>
           </div>
           <div class="col-md-5 text-justify">
-            <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider1" min="100" max="500" step="10">
+            <div class="slider-style" data-role="rangeslider">
+              <input type="range" id="slider1" min="1000" max="500000" step="10" onchange="printValue('slider1','inputsuma')">
             </div>
-            <div data-role="rangeslider" class="slider-style1 slider-style">
-              <input type="range" id="slider2" min="100" max="500" step="10" style="padding: 4%">
-            </div>
-            <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider3" min="100" max="500" step="10" style="padding: 2%">
+            <div class="slider-style" data-role="rangeslider">
+              <input type="range" id="slider2" min="1" max="50" step="1" style="padding: 4%" onchange="printValue('slider2','inputdlzka')">
             </div>
             <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider4" min="100" max="500" step="10" style="padding: 4%">
+              <input type="range" id="slider3" min="1" max="30" step="1" style="padding: 2%" onchange="printValue('slider3','inputfix')">
             </div>
             <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider5" min="100" max="500" step="10" style="padding: 2%">
+              <input type="range" id="slider4" min="300" max="5000" step="10" style="padding: 3%" onchange="printValue('slider4','inputmes')">
+            </div>
+            <div data-role="rangeslider" class="slider-style">
+              <input type="range" id="slider5" min="1000" max="500000" step="10" style="padding: 3%" onchange="printValue('slider5','inputhod')">
             </div>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      function printValue(sliderID, textbox) {
+          var x = document.getElementById(textbox);
+          var y = document.getElementById(sliderID);
+          x.value = y.value;
+      }
+  
+      window.onload = function() { printValue('slider1', 'inputsuma'); printValue('slider2', 'inputdlzka'); printValue('slider3', 'inputfix'); printValue('slider4', 'inputmes');printValue('slider5', 'inputhod'); }
+    </script>
   
 
 </body></html>
