@@ -6778,6 +6778,12 @@ body {
 /* PINGENDO COMMENT DO NOT REMOVE */
 .slider-style {
   padding: 2%;
+  height: 55px;
+  width: 430px;
+}
+.form-group {
+  height: 40px;
+  width: 650px;
 }
 .label-1 {
   padding: 2%;
