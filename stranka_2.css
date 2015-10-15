@@ -31,6 +31,9 @@
 .hypoteka > .row > a:hover {
   color: black;
 }
+.zoradenie {
+  margin: 0 auto;
+}
 input[type=checkbox] {
   /* Double-sized Checkboxes */
   -ms-transform: scale(3);
@@ -50,6 +53,11 @@ input[type=checkbox] {
   position: fixed;
   right: 5em;
   bottom: 2em;
+}
+.porovnaj-btn {
+  transform: translateY(50%);
+  position: relative;
+  top: 50%;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
