@@ -24,6 +24,13 @@
   padding: .2em;
   margin-bottom: .2em;
 }
+.hypoteka > .row > a {
+  display: block;
+  color: black;
+}
+.hypoteka > .row > a:hover {
+  color: black;
+}
 input[type=checkbox] {
   /* Double-sized Checkboxes */
   -ms-transform: scale(3);
@@ -38,6 +45,11 @@ input[type=checkbox] {
 }
 .fa-balance-scale {
   margin-right: .5em;
+}
+.hore {
+  position: fixed;
+  right: 5em;
+  bottom: 2em;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
