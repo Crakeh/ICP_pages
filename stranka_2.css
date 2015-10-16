@@ -6,6 +6,17 @@
  * Licensed under MIT 
  * Based on Bootstrap v3.3.4
 */
+.hypoteky {
+  background-color: #ececea;
+}
+.call-to-action {
+  color: #d9853b;
+}
+.call-to-action-btn {
+  background-color: #d9853b;
+  color: white;
+  border-color: #d9853b;
+}
 .splatka,
 .fixacia,
 .urok,
@@ -20,9 +31,9 @@
   font-size: 2em;
 }
 .hypoteka {
-  background-color: #FFB871;
   padding: .2em;
   margin-bottom: .2em;
+  border-bottom: solid #d9853b;
 }
 .hypoteka > .row > a {
   display: block;
@@ -32,7 +43,9 @@
   color: black;
 }
 .zoradenie {
-  margin: 0 auto;
+  transform: translateY(50%);
+  position: relative;
+  top: 50%;
 }
 input[type=checkbox] {
   /* Double-sized Checkboxes */

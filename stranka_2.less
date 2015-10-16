@@ -6,6 +6,22 @@
  * Based on Bootstrap v3.3.4
 */
 
+@my-background : #ECECEA;
+@call-to-action: #D9853B;
+.hypoteky {
+  background-color: @my-background;
+}
+
+.call-to-action {
+  color: @call-to-action;
+}
+
+.call-to-action-btn {
+  background-color: @call-to-action;
+  color: white;
+  border-color: @call-to-action;
+}
+
 .splatka,
 .fixacia,
 .urok,
@@ -23,15 +39,16 @@
 }
 
 .hypoteka {
-  background-color: #FFB871;
+  // background-color: @my-background;
   padding: .2em;
   margin-bottom: .2em;
+  border-bottom: solid @call-to-action;
   & > .row {
     & > a {
       display: block;
       color: black;
       &:hover {
-        color:black;
+        color: black;
       }
     }
   }
@@ -71,6 +88,7 @@ input[type=checkbox] {
   position: relative;
   top: 50%;
 }
+
 //
 // Variables
 // --------------------------------------------------
