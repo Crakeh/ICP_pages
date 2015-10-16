@@ -6,8 +6,8 @@
  * Licensed under MIT 
  * Based on Bootstrap v3.3.4
 */
-.hypoteky {
-  background-color: #ececea;
+body {
+  color: white;
 }
 .call-to-action {
   color: #d9853b;
@@ -37,10 +37,10 @@
 }
 .hypoteka > .row > a {
   display: block;
-  color: black;
+  color: white;
 }
 .hypoteka > .row > a:hover {
-  color: black;
+  color: white;
 }
 .zoradenie {
   transform: translateY(50%);
@@ -1149,8 +1149,8 @@ body {
   font-family: Lato;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #74afad;
 }
 input,
 button,
@@ -1195,7 +1195,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #ffffff;
+  background-color: #74afad;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1251,7 +1251,7 @@ h6,
   font-family: Lato;
   font-weight: 500;
   line-height: 1.1;
-  color: inherit;
+  color: #ffffff;
 }
 h1 small,
 h2 small,
@@ -2345,7 +2345,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #ffffff;
+  background-color: #74afad;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -2956,7 +2956,7 @@ select[multiple].form-group-lg .form-control {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #404040;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -3077,7 +3077,7 @@ select[multiple].form-group-lg .form-control {
 .btn:hover,
 .btn:focus,
 .btn.focus {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn:active,
@@ -3098,8 +3098,8 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #74afad;
   border-color: #cccccc;
 }
 .btn-default:hover,
@@ -3108,8 +3108,8 @@ fieldset[disabled] .btn {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #000000;
-  background-color: #e6e6e6;
+  color: #ffffff;
+  background-color: #589896;
   border-color: #adadad;
 }
 .btn-default:active,
@@ -3135,12 +3135,12 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #ffffff;
+  background-color: #74afad;
   border-color: #cccccc;
 }
 .btn-default .badge {
-  color: #ffffff;
-  background-color: #000000;
+  color: #74afad;
+  background-color: #ffffff;
 }
 .btn-primary {
   color: #ffffff;
@@ -3991,7 +3991,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #ffffff;
+  background-color: #74afad;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -4037,7 +4037,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #74afad;
   }
 }
 .nav-pills > li {
@@ -4105,7 +4105,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #ffffff;
+    border-bottom-color: #74afad;
   }
 }
 .tab-content > .tab-pane {
@@ -4949,7 +4949,7 @@ a.badge:focus {
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #ffffff;
+  background-color: #74afad;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -4968,7 +4968,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #000000;
+  color: #ffffff;
 }
 .alert {
   padding: 15px;
@@ -5184,8 +5184,8 @@ a.thumbnail.active {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #999999;
+  background-color: #74afad;
+  border: 1px solid #203736;
 }
 .list-group-item:first-child {
   border-top-right-radius: 4px;
@@ -5347,7 +5347,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: #74afad;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -6635,7 +6635,7 @@ body {
 }
 /* text-inverse is deprecated */
 .text-inverse {
-  color: #ffffff;
+  color: #000000;
 }
 /* TODO: verify if we can touch only section */
 .jumbotron {
@@ -6645,7 +6645,7 @@ body {
   color: #337cbb !important;
 }
 .jumbotron h1.text-inverse {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 .jumbotron h1.text-info {
   color: #5bc0de !important;
@@ -6768,7 +6768,7 @@ body {
   color: #337cbb !important;
 }
 .cover h1.text-inverse {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 .cover h1.text-info {
   color: #5bc0de !important;
@@ -6810,7 +6810,7 @@ body {
   background-color: transparent;
 }
 .cover .navbar .navbar-toggle .icon-bar {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 .cover .navbar.navbar-inverse .navbar-toggle {
   border-color: transparent;
@@ -6820,7 +6820,7 @@ body {
   background-color: transparent;
 }
 .cover .navbar.navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 .cover .cover-image {
   z-index: -1;
@@ -6834,5 +6834,8 @@ body {
 .cover .cover-image.background-image-fixed,
 .cover .cover-image.cover-image-fixed {
   background-attachment: fixed;
+}
+select {
+  color: black;
 }
 /* PINGENDO COMMENT DO NOT REMOVE */

@@ -6,10 +6,10 @@
  * Based on Bootstrap v3.3.4
 */
 
-@my-background : #ECECEA;
+@my-background : #74AFAD;
 @call-to-action: #D9853B;
-.hypoteky {
-  background-color: @my-background;
+body {
+  color: white;
 }
 
 .call-to-action {
@@ -46,9 +46,9 @@
   & > .row {
     & > a {
       display: block;
-      color: black;
+      color: white;
       &:hover {
-        color: black;
+        color: white;
       }
     }
   }
@@ -110,9 +110,9 @@ input[type=checkbox] {
 //
 //## Settings for some of the most global styles.
 //** Background color for `<body>`.
-@body-bg : white;
+@body-bg : @my-background;
 //** Global text color on `<body>`.
-@text-color : black;
+@text-color : white;
 //** Global textual link color.
 @link-color : @brand-primary;
 //** Link hover color set via `darken()` function.
@@ -154,7 +154,7 @@ monospace;
 @headings-font-family : Lato;
 @headings-font-weight : 500;
 @headings-line-height : 1.1;
-@headings-color : inherit;
+@headings-color : white;
 //== Iconography
 //
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
@@ -804,5 +804,9 @@ monospace;
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/utilities.less";
 @import "https://raw.githubusercontent.com/twbs/bootstrap/v3.3.4/less/responsive-utilities.less";
 @import "https://raw.githubusercontent.com/Pingendo/pingendo-bootstrap/gh-pages/less/pingendo-custom.less";
+select {
+  color: black;
+}
+
 
 /* PINGENDO COMMENT DO NOT REMOVE */
