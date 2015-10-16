@@ -6,8 +6,8 @@
  * Licensed under MIT 
  * Based on Bootstrap v3.3.4
 */
-body {
-  color: white;
+.my-header {
+  background-color: #558C89;
 }
 .call-to-action {
   color: #d9853b;
