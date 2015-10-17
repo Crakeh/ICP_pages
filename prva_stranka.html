@@ -1,112 +1,113 @@
 <html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="prva_stranka.css" rel="stylesheet" type="text/css">
-  </head><body>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <img src="logo.JPG" class="img-responsive">
-          </div>
-          <div class="col-md-9">
-            <h1 class="text-center text-danger">Hypotéky</h1>
-          </div>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="prva_stranka.css" rel="stylesheet" type="text/css">
+    </head><body>
+        <div class="section header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="logo.JPG" class="img-responsive">
+                    </div>
+                    <div class="col-md-9 ">
+                        <h1 class="text-center text-danger">Hypotéky</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputsuma" class="control-label">Suma (€)</label>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 text-color-white">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label for="inputsuma" class="control-label">Suma (€)</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" id="inputsuma" placeholder="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label for="inputdlzka" class="control-label">Dĺžka splatnosti (rokov)</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputdlzka">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label for="inputfix" class="control-label">Fixácia (rokov)</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputfix">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputmes">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu (€) &nbsp;
+                                        <sup>1</sup>
+                                    </label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputhod">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <label for="row" class="control-label label-1">
+                                <sup>1</sup>Nepovinné pole</label>
+                            <div class="col-sm-2 col-sm-offset-10">
+                                <button type="submit" class="btn btn-warning darkorange">Ďalej</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-justify">
+                        <div class="slider-style" data-role="rangeslider">
+                            <input type="range" id="slider1" min="1000" max="500000" step="10" onchange="printValue('slider1','inputsuma')">
+                        </div>
+                        <div class="slider-style" data-role="rangeslider">
+                            <input type="range" id="slider2" min="1" max="50" step="1" onchange="printValue('slider2','inputdlzka')">
+                        </div>
+                        <div data-role="rangeslider" class="slider-style">
+                            <input type="range" id="slider3" min="1" max="30" step="1" onchange="printValue('slider3','inputfix')">
+                        </div>
+                        <div data-role="rangeslider" class="slider-style">
+                            <input type="range" id="slider4" min="300" max="5000" step="10" onchange="printValue('slider4','inputmes')">
+                        </div>
+                        <div data-role="rangeslider" class="slider-style">
+                            <input type="range" id="slider5" min="1000" max="500000" step="10" onchange="printValue('slider5','inputhod')">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                  <input type="text" id="inputsuma" placeholder="" class="form-control">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputdlzka" class="control-label">Dĺžka splatnosti (rokov)</label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputdlzka">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputfix" class="control-label">Fixácia (rokov)</label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputfix">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputmes">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu (€) &nbsp;<sup>1</sup>
-                  </label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" id="inputhod">
-                </div>
-              </div>
-            </form>
-            <div class="row">
-              <label for="row" class="control-label label-1">
-                <sup>1</sup>Nepovinné pole</label>
-              <div class="col-sm-2 col-sm-offset-10">
-                <button type="submit" class="btn btn-success">Ďalej</button>
-              </div>
             </div>
-          </div>
-          <div class="col-md-5 text-justify">
-            <div class="slider-style" data-role="rangeslider">
-              <input type="range" id="slider1" min="1000" max="500000" step="10" onchange="printValue('slider1','inputsuma')">
-            </div>
-            <div class="slider-style" data-role="rangeslider">
-              <input type="range" id="slider2" min="1" max="50" step="1" onchange="printValue('slider2','inputdlzka')">
-            </div>
-            <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider3" min="1" max="30" step="1" onchange="printValue('slider3','inputfix')">
-            </div>
-            <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider4" min="300" max="5000" step="10" onchange="printValue('slider4','inputmes')">
-            </div>
-            <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider5" min="1000" max="500000" step="10" onchange="printValue('slider5','inputhod')">
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <script>
-      function printValue(sliderID, textbox) {
-                  var x = document.getElementById(textbox);
-                  var y = document.getElementById(sliderID);
-                  x.value = y.value;
-              }
-          
-              window.onload = function() { 
-                printValue('slider1', 'inputsuma'); 
-                printValue('slider2', 'inputdlzka'); 
-                printValue('slider3', 'inputfix'); 
-                printValue('slider4', 'inputmes');
-                printValue('slider5', 'inputhod'); }
-    </script>
-  
+        <script>
+            function printValue(sliderID, textbox) {
+                                          var x = document.getElementById(textbox);
+                                          var y = document.getElementById(sliderID);
+                                          x.value = y.value;
+                                      }
+                                  
+                                      window.onload = function() { 
+                                        printValue('slider1', 'inputsuma'); 
+                                        printValue('slider2', 'inputdlzka'); 
+                                        printValue('slider3', 'inputfix'); 
+                                        printValue('slider4', 'inputmes');
+                                        printValue('slider5', 'inputhod'); }
+        </script>
+    
 
 </body></html>
