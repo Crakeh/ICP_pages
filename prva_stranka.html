@@ -50,6 +50,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputsuma" class="control-label">Suma (€)</label>
+                  <sup>?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" id="inputsuma" placeholder="" class="form-control">
@@ -58,6 +59,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputdlzka" class="control-label">Dĺžka splatnosti (rokov)</label>
+                  <sup>?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputdlzka">
@@ -66,6 +68,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputfix" class="control-label">Fixácia (rokov)</label>
+                  <sup>?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputfix">
@@ -74,6 +77,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
+                  <sup>?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputmes">
@@ -82,7 +86,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu (€) &nbsp;
-                    <sup>1</sup>
+                    <sup>1 ?</sup>
                   </label>
                 </div>
                 <div class="col-sm-6">
@@ -91,7 +95,7 @@
               </div>
             </form>
             <div class="row">
-              <label for="row" class="control-label label-1">
+              <label for="row">
                 <sup>1</sup>Nepovinné pole</label>
               <div class="col-sm-2 col-sm-offset-10">
                 <button type="submit" class="btn btn-warning darkorange">Ďalej</button>
@@ -100,7 +104,9 @@
           </div>
           <div class="col-md-5 text-justify">
             <div class="slider-style" data-role="rangeslider">
+              <sup>1000</sup>
               <input type="range" id="slider1" min="1000" max="500000" step="10" onchange="printValue('slider1','inputsuma')">
+              <sup style="float:right; margin-top:-22px;">1000</sup>
             </div>
             <div class="slider-style" data-role="rangeslider">
               <input type="range" id="slider2" min="1" max="50" step="1" onchange="printValue('slider2','inputdlzka')">
@@ -120,17 +126,17 @@
     </div>
     <script>
       function printValue(sliderID, textbox) {
-                                                  var x = document.getElementById(textbox);
-                                                  var y = document.getElementById(sliderID);
-                                                  x.value = y.value;
-                                              }
-                                          
-                                              window.onload = function() { 
-                                                printValue('slider1', 'inputsuma'); 
-                                                printValue('slider2', 'inputdlzka'); 
-                                                printValue('slider3', 'inputfix'); 
-                                                printValue('slider4', 'inputmes');
-                                                printValue('slider5', 'inputhod'); }
+                                                          var x = document.getElementById(textbox);
+                                                          var y = document.getElementById(sliderID);
+                                                          x.value = y.value;
+                                                      }
+                                                  
+                                                      window.onload = function() { 
+                                                        printValue('slider1', 'inputsuma'); 
+                                                        printValue('slider2', 'inputdlzka'); 
+                                                        printValue('slider3', 'inputfix'); 
+                                                        printValue('slider4', 'inputmes');
+                                                        printValue('slider5', 'inputhod'); }
     </script>
   
 
