@@ -48,7 +48,7 @@
                 asc ? that.removeClass('dropup') : that.addClass('dropup');
                 that.siblings('.btn').removeClass('dropup');
 
-                var sortedMortgages = sortMortgages(mortgages, that.attr('data-sort'), asc);
+                var sortedMortgages = sortMortgages(mortgages, that.data('sort'), asc);
                 for (var i = 0, len = sortedMortgages.length; i < len; i++) {
                     $('.hypoteky').append($('#' + sortedMortgages[i].id));
                 }
