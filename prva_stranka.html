@@ -104,21 +104,30 @@
           </div>
           <div class="col-md-5 text-justify">
             <div class="slider-style" data-role="rangeslider">
-              <sup>1000</sup>
-              <input type="range" id="slider1" min="1000" max="500000" step="10" onchange="printValue('slider1','inputsuma')">
-              <sup style="float:right; margin-top:-22px;">1000</sup>
+              <sup>1.000</sup>
+              <input type="range" id="slider1" min="1000" max="500000" step="10" value="1000" onchange="printValue('slider1','inputsuma')">
+              <span class="range-slider-active-segment"></span>
+              <sup style="float:right; margin-top:-22px;">500.000</sup>
             </div>
             <div class="slider-style" data-role="rangeslider">
-              <input type="range" id="slider2" min="1" max="50" step="1" onchange="printValue('slider2','inputdlzka')">
+              <sup>1</sup>
+              <input type="range" id="slider2" min="1" max="50" step="1" onchange="printValue('slider2','inputdlzka')" value="1">
+              <sup style="float:right; margin-top:-22px;">50</sup>
+            </div>
+            <div data-role="rangeslider" class="slider-style" draggable="true">
+              <sup>1</sup>
+              <input type="range" id="slider3" min="1" max="30" step="1" onchange="printValue('slider3','inputfix')" value="1">
+              <sup style="float:right; margin-top:-22px;">30</sup>
             </div>
             <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider3" min="1" max="30" step="1" onchange="printValue('slider3','inputfix')">
+              <sup>300</sup>
+              <input type="range" id="slider4" min="300" max="5000" step="10" onchange="printValue('slider4','inputmes')" value="300">
+              <sup style="float:right; margin-top:-22px;">5.000</sup>
             </div>
             <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider4" min="300" max="5000" step="10" onchange="printValue('slider4','inputmes')">
-            </div>
-            <div data-role="rangeslider" class="slider-style">
-              <input type="range" id="slider5" min="1000" max="500000" step="10" onchange="printValue('slider5','inputhod')">
+              <sup>1.000</sup>
+              <input type="range" id="slider5" min="1000" max="500000" step="10" onchange="printValue('slider5','inputhod')" value="1000">
+              <sup style="float:right; margin-top:-22px;">500.000</sup>
             </div>
           </div>
         </div>
