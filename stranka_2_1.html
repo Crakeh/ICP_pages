@@ -78,16 +78,21 @@
         }
 
         function buildComparisonTable(mortgages) {
-            var table = $('<table class="table"></table>');
-            var banks = $('<tr><th></th></tr>');
-            _.forEach(mortgages, function (m) {
-                banks.append($('<th>' + m.banka + '</th>'));
-            });
-            table.append(banks);
-            table.append(buildComparisonRow(mortgages, 'Splatky', 'splatka', false));
-            table.append(buildComparisonRow(mortgages, 'Fixacie', 'fixacia', true));
-            table.append(buildComparisonRow(mortgages, 'Uroky', 'urok', false));
-            table.append(buildComparisonRow(mortgages, 'Preplatenia', 'preplatenie', false));
+            var table;
+            if (mortgages.length > 1) {
+                table = $('<table class="table"></table>');
+                var banks = $('<tr><th></th></tr>');
+                _.forEach(mortgages, function (m) {
+                    banks.append($('<th>' + m.banka + '</th>'));
+                });
+                table.append(banks);
+                table.append(buildComparisonRow(mortgages, 'Splatky', 'splatka', false));
+                table.append(buildComparisonRow(mortgages, 'Fixacie', 'fixacia', true));
+                table.append(buildComparisonRow(mortgages, 'Uroky', 'urok', false));
+                table.append(buildComparisonRow(mortgages, 'Preplatenia', 'preplatenie', false));
+            } else {
+                table = $('<h3>Vyberte si aspon dve hypoteky</h3>');
+            }
             return table;
         }
 
