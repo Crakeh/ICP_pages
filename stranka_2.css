@@ -57,6 +57,9 @@
   font-size: 1.5em;
   font-style: normal;
 }
+.zoradenie.active {
+  color: #d9853b;
+}
 input[type=checkbox] {
   /* Double-sized Checkboxes */
   -ms-transform: scale(3);
