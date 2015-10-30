@@ -95,9 +95,26 @@ input[type=checkbox] {
 }
 
 .porovnaj-btn {
-  transform: translateY(50%);
-  position: relative;
-  top: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  &.fixed {
+    position: fixed;
+    top: 5rem;
+    right: 3rem;
+    bottom: auto;
+    z-index: 4;
+  }
+}
+
+.best {
+  color: green;
+  font-weight: bold;
+}
+
+.worst {
+  color: red;
+  font-weight: bold;
 }
 
 //

@@ -1,15 +1,15 @@
-<html>
-<head>
+<html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css">
+    <script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="lodash.js"></script>
+    <link href="jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="stranka_2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script>
-
         function parseMortgages() {
             var crudes = $('.hypoteka');
             var mortgages = [];
@@ -20,6 +20,7 @@
                 mortgage.urok = parseFloat(crude.find('.urok').find('.hodnota').text().replace(",", "."));
                 mortgage.fixacia = parseInt(crude.find('.fixacia').find('.hodnota').text().replace(" ", ""));
                 mortgage.preplatenie = parseInt(crude.find('.preplatenie').find('.hodnota').text().replace(" ", ""));
+                mortgage.banka = crude.find('.banka').text();
                 mortgages.push(mortgage);
             }
             return mortgages;
@@ -27,14 +28,77 @@
 
         function sortMortgages(mortgages, criterium, asc) {
             if (asc) {
-                return mortgages.sort(function(b, a) {
+                return mortgages.sort(function (b, a) {
                     return parseFloat(a[criterium]) - parseFloat(b[criterium]);
                 });
             } else {
-                return mortgages.sort(function(a, b) {
+                return mortgages.sort(function (a, b) {
                     return parseFloat(a[criterium]) - parseFloat(b[criterium]);
                 });
             }
+        }
+
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function () {
+                var context = this, args = arguments;
+                var later = function () {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
+        function buildComparisonRow(mortgages, rowName, propertyName, bestMax) {
+            var row = $('<tr><td>' + rowName + '</td></tr>');
+            var i = 0, min = Number.POSITIVE_INFINITY, max = Number.NEGATIVE_INFINITY;
+            _.forEach(mortgages, function (m) {
+                row.append($('<td id='+propertyName+i+'>' + m[propertyName] + '</td>'));
+                if (m[propertyName] < min) {
+                    min = i;
+                }
+                if (m[propertyName] > max) {
+                    max = i;
+                }
+                i++;
+            });
+            if (bestMax) {
+                row.find('#' + propertyName + max).addClass('best');
+                row.find('#' + propertyName + min).addClass('worst');
+            } else {
+                row.find('#' + propertyName + max).addClass('worst');
+                row.find('#' + propertyName + min).addClass('best');
+            }
+
+            return row;
+        }
+
+        function buildComparisonTable(mortgages) {
+            var table = $('<table class="table"></table>');
+            var banks = $('<tr><th></th></tr>');
+            _.forEach(mortgages, function (m) {
+                banks.append($('<th>' + m.banka + '</th>'));
+            });
+            table.append(banks);
+            table.append(buildComparisonRow(mortgages, 'Splatky', 'splatka', false));
+            table.append(buildComparisonRow(mortgages, 'Fixacie', 'fixacia', true));
+            table.append(buildComparisonRow(mortgages, 'Uroky', 'urok', false));
+            table.append(buildComparisonRow(mortgages, 'Preplatenia', 'preplatenie', false));
+            return table;
+        }
+
+        function filterCheckedMortgages(mortgages) {
+            var checked = [];
+            _.forEach(mortgages, function (m) {
+                if ($('#' + m.id + ' [type=\'checkbox\']').prop('checked')) {
+                    checked.push(m);
+                }
+            });
+            return checked;
         }
 
         $(document).ready(function () {
@@ -55,13 +119,39 @@
 
             });
 
-            $('body').on('click', '.porovnaj-btn', function() {
-                //TODO
+            $(document).on('click', '.porovnaj-btn', function (e) {
+                var dialog = $('#porovnajDialog');
+                dialog.empty();
+                dialog.html(buildComparisonTable(filterCheckedMortgages(mortgages)));
+                dialog.dialog('open');
+            });
+
+            var porovnajBtn = $('#porovnajBtn');
+            var movePorovnajBtn = debounce(function (e) {
+                if ($(this).scrollTop() > 150) {
+                    porovnajBtn.addClass('fixed');
+                } else {
+                    porovnajBtn.removeClass('fixed');
+                }
+            }, 10);
+
+            $(document).on('scroll', movePorovnajBtn);
+
+            $('#porovnajDialog').dialog({
+                draggable: false,
+                resizable: false,
+                width: 700,
+                modal: true,
+                autoOpen: false,
+                buttons: {
+                    "Zatvorit": function () {
+                        $(this).dialog('close');
+                    }
+                }
             });
         });
     </script>
-</head>
-<body>
+</head><body>
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -88,7 +178,7 @@
         </div>
     </div>
 </div>
-<div class="section my-header">
+<div class="section my-header" id="header">
     <div class="container">
         <div class="row">
             <div class="col-md-2">
@@ -127,9 +217,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" style="padding-top:100px;">
-                <a class="btn btn-lg porovnaj-btn call-to-action-btn" style="float:right;">Porovnaj <i
-                        class="fa fa-balance-scale"></i></a>
+            <div class="col-md-4" style="padding-top:17rem;">
+                <a class="btn btn-lg porovnaj-btn call-to-action-btn" id="porovnajBtn">Porovnaj <i class="fa fa-balance-scale"></i></a>
             </div>
         </div>
     </div>
@@ -147,7 +236,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <h3 class="text-center">Zuno bank a.g.</h3>
+                                <h3 class="text-center banka">Zuno bank a.g.</h3>
                             </div>
                             <div class="row text-center">
                                 <i class="fa fa-3x fa-chevron-right"></i>
@@ -197,9 +286,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <h3 class="text-center">Tatra banka
-                                    <br>
-                                </h3>
+                                <h3 class="text-center banka">Tatra banka</h3>
                             </div>
                             <div class="row text-center">
                                 <i class="fa fa-3x fa-chevron-right"></i>
@@ -224,6 +311,7 @@
                             </div>
                         </div>
                     </a>
+
                     <div class="col-md-2">
                         <div class="row">
                             <p class="hodnotenie-text text-center">Hodnotenie</p>
@@ -248,9 +336,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <h3 class="text-center">VUB Banka
-                                    <br>
-                                </h3>
+                                <h3 class="text-center banka">VUB Banka</h3>
                             </div>
                             <div class="row text-center">
                                 <i class="fa fa-3x fa-chevron-right"></i>
@@ -275,6 +361,7 @@
                             </div>
                         </div>
                     </a>
+
                     <div class="col-md-2">
                         <div class="row">
                             <p class="hodnotenie-text text-center">Hodnotenie</p>
@@ -294,10 +381,7 @@
             <div class="col-md-8">
                 <a href="#"><i class="fa fa-5x fa-long-arrow-left call-to-action"></i></a>
             </div>
-            <div class="col-md-4">
-                <a class="btn btn-lg porovnaj-btn call-to-action-btn" style="float:right;">Porovnaj <i
-                        class="fa fa-balance-scale"></i></a>
-            </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
 </div>
@@ -307,6 +391,10 @@
     </div>
 </div>
 
+<div id="porovnajDialog">
 
-</body>
-</html>
+</div>
+
+
+
+</body></html>
