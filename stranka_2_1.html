@@ -1,5 +1,4 @@
-<html>
-<head>
+<html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -8,68 +7,62 @@
     <script type="text/javascript" src="lodash.js"></script>
     <script type="text/javascript" src="stranka_2.js"></script>
     <link href="jquery-ui-1.11.4.custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="stranka_2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
-<body>
-<div id="navbar"></div>
-<div class="section my-header" id="header">
-    <div class="container">
+  </head><body>
+    <div id="navbar"></div>
+    <div class="section my-header" id="header">
+      <div class="container">
         <div class="row">
-            <div class="col-md-2">
-                <img src="logo.JPG" class="img-responsive">
+          <div class="col-md-4">
+            <div class="enjoy-css">Hypotéky</div>
+            <script type="text/javascript" script-name="convergence" src="http://use.edgefonts.net/convergence.js"></script>
+          </div>
+          <div class="col-md-6">
+            <div class="legend row text-center">Legenda:
+              <div>
+                <i class="fa fa-hourglass"></i>Fixácia</div>
+              <div>
+                <i class="fa fa-line-chart"></i>Úrok</div>
+              <div>
+                <i class="fa fa-plus"></i>Preplatenie</div>
             </div>
-            <div class="col-md-6">
-                <div class="legend row text-center">Legenda:
-                    <div>
-                        <i class="fa fa-hourglass"></i>Fixácia
-                    </div>
-                    <div>
-                        <i class="fa fa-line-chart"></i>Úrok
-                    </div>
-                    <div>
-                        <i class="fa fa-plus"></i>Preplatenie
-                    </div>
+            <div class="row">
+              <div class="text-center zoradenie">
+                <label>Zoradiť podľa</label>
+                <div class="btn-group">
+                  <button class="btn btn-default " type="button" data-sort="urok">Úrok
+                    <span class="caret"></span>
+                  </button>
+                  <button class="btn btn-default" type="button" data-sort="fixacia">Fixácia
+                    <span class="caret"></span>
+                  </button>
+                  <button class="btn btn-default" type="button" data-sort="splatka">Splátka
+                    <span class="caret"></span>
+                  </button>
+                  <button class="btn btn-default" type="button" data-sort="preplatenie">Preplatenie
+                    <span class="caret"></span>
+                  </button>
+                  <button class="btn btn-default" type="button" data-sort="hodnotenie">Hodnotenie
+                    <span class="caret"></span>
+                  </button>
                 </div>
-                <div class="row">
-                    <div class="text-center zoradenie">
-                        <label>Zoradiť podľa</label>
-
-                        <div class="btn-group">
-                            <button class="btn btn-default " type="button" data-sort="urok">Úrok
-                                <span class="caret"></span>
-                            </button>
-                            <button class="btn btn-default" type="button" data-sort="fixacia">Fixácia
-                                <span class="caret"></span>
-                            </button>
-                            <button class="btn btn-default" type="button" data-sort="splatka">Splátka
-                                <span class="caret"></span>
-                            </button>
-                            <button class="btn btn-default" type="button" data-sort="preplatenie">Preplatenie
-                                <span class="caret"></span>
-                            </button>
-                            <button class="btn btn-default" type="button" data-sort="hodnotenie">Hodnotenie
-                                <span class="caret"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="col-md-4" style="padding-top:17rem;">
-                <a class="btn btn-lg porovnaj-btn call-to-action-btn" id="porovnajBtn">Porovnaj <i
-                        class="fa fa-balance-scale"></i></a>
-            </div>
+          </div>
+          <div class="col-md-2" style="padding-top:17rem;">
+            <a class="btn btn-lg porovnaj-btn call-to-action-btn" id="porovnajBtn">Porovnaj <i class="fa fa-balance-scale"></i></a>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<div class="section">
-    <div class="container">
+    <div class="section">
+      <div class="container">
         <div class="row hypoteky">
-            <div class="col-md-12 hypoteka" id="hypoteka1">
-                <div class="row">
-                    <a href="3.stranka.html">
+          <div class="col-md-12 hypoteka" id="hypoteka1">
+            <div class="row">
+              <a href="3.stranka.html">
                         <div class="col-md-2">
                             <div class="row text-center">
                                 <div class="col-md-offset-2 col-md-8">
@@ -102,24 +95,23 @@
                             </div>
                         </div>
                     </a>
-
-                    <div class="col-md-2">
-                        <div class="row">
-                            <p class="hodnotenie-text text-center">Hodnotenie</p>
-                        </div>
-                        <div class="row">
-                            <p class="hodnotenie-cislo text-right">8/10</p>
-                        </div>
-                        <div class="row text-center">
-                            <i class="fa fa-2x fa-balance-scale"></i>
-                            <input type="checkbox">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 hypoteka" id="hypoteka2">
+              <div class="col-md-2">
                 <div class="row">
-                    <a href="3.stranka.html">
+                  <p class="hodnotenie-text text-center">Hodnotenie</p>
+                </div>
+                <div class="row">
+                  <p class="hodnotenie-cislo text-right">8/10</p>
+                </div>
+                <div class="row text-center">
+                  <i class="fa fa-2x fa-balance-scale"></i>
+                  <input type="checkbox">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 hypoteka" id="hypoteka2">
+            <div class="row">
+              <a href="3.stranka.html">
                         <div class="col-md-2">
                             <div class="row text-center">
                                 <div class="col-md-offset-2 col-md-8">
@@ -152,24 +144,23 @@
                             </div>
                         </div>
                     </a>
-
-                    <div class="col-md-2">
-                        <div class="row">
-                            <p class="hodnotenie-text text-center">Hodnotenie</p>
-                        </div>
-                        <div class="row">
-                            <p class="hodnotenie-cislo text-right">7,7/10</p>
-                        </div>
-                        <div class="row text-center">
-                            <i class="fa fa-2x fa-balance-scale"></i>
-                            <input type="checkbox">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 hypoteka" id="hypoteka3">
+              <div class="col-md-2">
                 <div class="row">
-                    <a href="3.stranka.html">
+                  <p class="hodnotenie-text text-center">Hodnotenie</p>
+                </div>
+                <div class="row">
+                  <p class="hodnotenie-cislo text-right">7,7/10</p>
+                </div>
+                <div class="row text-center">
+                  <i class="fa fa-2x fa-balance-scale"></i>
+                  <input type="checkbox">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 hypoteka" id="hypoteka3">
+            <div class="row">
+              <a href="3.stranka.html">
                         <div class="col-md-2">
                             <div class="row text-center">
                                 <div class="col-md-offset-2 col-md-8">
@@ -202,40 +193,35 @@
                             </div>
                         </div>
                     </a>
-
-                    <div class="col-md-2">
-                        <div class="row">
-                            <p class="hodnotenie-text text-center">Hodnotenie</p>
-                        </div>
-                        <div class="row">
-                            <p class="hodnotenie-cislo text-right">7,2/10</p>
-                        </div>
-                        <div class="row text-center">
-                            <i class="fa fa-2x fa-balance-scale"></i>
-                            <input type="checkbox">
-                        </div>
-                    </div>
+              <div class="col-md-2">
+                <div class="row">
+                  <p class="hodnotenie-text text-center">Hodnotenie</p>
                 </div>
+                <div class="row">
+                  <p class="hodnotenie-cislo text-right">7,2/10</p>
+                </div>
+                <div class="row text-center">
+                  <i class="fa fa-2x fa-balance-scale"></i>
+                  <input type="checkbox">
+                </div>
+              </div>
             </div>
+          </div>
         </div>
         <div class="row">
-            <div class="col-md-8">
-                <a href="#"><i class="fa fa-5x fa-long-arrow-left call-to-action"></i></a>
-            </div>
-            <div class="col-md-4"></div>
+          <div class="col-md-8">
+            <a href="#"><i class="fa fa-5x fa-long-arrow-left call-to-action"></i></a>
+          </div>
+          <div class="col-md-4"></div>
         </div>
+      </div>
     </div>
-</div>
-<div class="row">
-    <div class="hore">
+    <div class="row">
+      <div class="hore">
         <a href="#"><i class="fa fa-5x fa-long-arrow-up call-to-action"></i></a>
+      </div>
     </div>
-</div>
+    <div id="porovnajDialog"></div>
+  
 
-<div id="porovnajDialog">
-
-</div>
-
-
-</body>
-</html>
+</body></html>

@@ -157,7 +157,7 @@ function filterCheckedMortgages(mortgages) {
 
 $(document).ready(function () {
 
-    $('#navbar').load('navbar.html');
+    //$('#navbar').load('navbar.html');
 
     $('#porovnajDialog').dialog({
         draggable: false,
@@ -172,6 +172,13 @@ $(document).ready(function () {
         }
     });
 
+    //$('#dalej').on('click', function (e) {
+    //    var suma = $('#sumaInput').val();
+    //    if (suma > 100000) {
+    //        window.location = 'prva_stranka.html#adsfasd'
+    //    }
+    //});
+
     //_.forEach(mortgages, function (m) {
     //    $('.hypoteky').append(loadMortgage(m));
     //});
@@ -184,6 +191,7 @@ $(document).ready(function () {
     //    $('.hypoteky').append(loadMortgage(m));
     //});
     //var variant = window.location.href.split('#')[1];
+    //window.location = 'jtvoja_stranka.html#prva_vanrinta'
 
     //if (variant == 'prva_varianta') {
     //    loadMortgage();

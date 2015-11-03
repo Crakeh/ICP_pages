@@ -12,6 +12,16 @@
 .call-to-action {
   color: #d9853b;
 }
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 5em/1 "convergence", Helvetica, sans-serif;
+  color: white;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
 .call-to-action-btn {
   background-color: #d9853b;
   color: white;
@@ -56,9 +66,6 @@
   top: 50%;
   font-size: 1.5em;
   font-style: normal;
-}
-.zoradenie.active {
-  color: #d9853b;
 }
 input[type=checkbox] {
   /* Double-sized Checkboxes */
