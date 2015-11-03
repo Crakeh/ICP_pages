@@ -124,7 +124,7 @@ function filterCheckedMortgages(mortgages) {
     });
     return checked;
 }
-
+//
 //mortgages = [
 //    {
 //        id: 'hypoteka1',
@@ -177,7 +177,7 @@ $(document).ready(function () {
     //$(mortgages).each(function (m) {
     //    $('.hypoteky').append(loadMortgage(m));
     //});
-    //var variant = window.location.href.split('#')[1];
+
     //window.location = 'jtvoja_stranka.html#prva_vanrinta'
 
     //if (variant == 'prva_varianta') {
@@ -185,7 +185,16 @@ $(document).ready(function () {
     //
     //}
 
+    var variant = window.location.href.split('#')[1];
+    if (variant == 'prvy') {
+        $('#prvy_variant').removeClass('hidden');
+    } else if (variant == 'druhy') {
+        $('#druhy_variant').removeClass('hidden');
+    }
+
     mortgages = parseMortgages();
+
+
 
     $('.zoradenie').on('click', 'button', function (e) {
         e.preventDefault();
