@@ -124,7 +124,7 @@ function filterCheckedMortgages(mortgages) {
     });
     return checked;
 }
-
+//
 //mortgages = [
 //    {
 //        id: 'hypoteka1',
@@ -157,20 +157,14 @@ function filterCheckedMortgages(mortgages) {
 
 $(document).ready(function () {
 
-    $('#navbar').load('navbar.html');
+    //$('#navbar').load('navbar.html');
 
-    $('#porovnajDialog').dialog({
-        draggable: false,
-        resizable: false,
-        width: 700,
-        modal: true,
-        autoOpen: false,
-        buttons: {
-            "Zatvorit": function () {
-                $(this).dialog('close');
-            }
-        }
-    });
+    //$('#dalej').on('click', function (e) {
+    //    var suma = $('#sumaInput').val();
+    //    if (suma > 100000) {
+    //        window.location = 'prva_stranka.html#adsfasd'
+    //    }
+    //});
 
     //_.forEach(mortgages, function (m) {
     //    $('.hypoteky').append(loadMortgage(m));
@@ -183,14 +177,24 @@ $(document).ready(function () {
     //$(mortgages).each(function (m) {
     //    $('.hypoteky').append(loadMortgage(m));
     //});
-    //var variant = window.location.href.split('#')[1];
+
+    //window.location = 'jtvoja_stranka.html#prva_vanrinta'
 
     //if (variant == 'prva_varianta') {
     //    loadMortgage();
     //
     //}
 
+    var variant = window.location.href.split('#')[1];
+    if (variant == 'prvy') {
+        $('#prvy_variant').removeClass('hidden');
+    } else if (variant == 'druhy') {
+        $('#druhy_variant').removeClass('hidden');
+    }
+
     mortgages = parseMortgages();
+
+
 
     $('.zoradenie').on('click', 'button', function (e) {
         e.preventDefault();
@@ -208,10 +212,9 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.porovnaj-btn', function (e) {
-        var dialog = $('#porovnajDialog');
+        var dialog = $('#porovnajDialog').find('.modal-body');
         dialog.empty();
         dialog.html(buildComparisonTable(filterCheckedMortgages(mortgages)));
-        dialog.dialog('open');
     });
 
     var porovnajBtn = $('#porovnajBtn');

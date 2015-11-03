@@ -7,10 +7,23 @@
  * Based on Bootstrap v3.3.4
 */
 .my-header {
-  background-color: #558C89;
+  background-color: #558c89;
 }
 .call-to-action {
   color: #d9853b;
+}
+.modal-header {
+  background-color: #558c89;
+}
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 5em/1 "convergence", Helvetica, sans-serif;
+  color: white;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 .call-to-action-btn {
   background-color: #d9853b;
@@ -56,9 +69,6 @@
   top: 50%;
   font-size: 1.5em;
   font-style: normal;
-}
-.zoradenie.active {
-  color: #d9853b;
 }
 input[type=checkbox] {
   /* Double-sized Checkboxes */
@@ -5827,7 +5837,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #ffffff;
+  background-color: #74afad;
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
