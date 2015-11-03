@@ -43,6 +43,9 @@
 .hodnotenie-text {
   font-size: 2em;
 }
+.clickable {
+  cursor: pointer;
+}
 .hypoteka {
   padding: .2em;
   margin-bottom: .2em;

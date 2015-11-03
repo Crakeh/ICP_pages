@@ -227,4 +227,17 @@ $(document).ready(function () {
     }, 10);
 
     $(document).on('scroll', movePorovnajBtn);
+
+    $('#hypoteka1').on('click', '.clickable', function (e) {
+        e.preventDefault();
+        window.location = '3.stranka.html#zuno';
+    });
+    $('#hypoteka2').on('click', '.clickable', function (e) {
+        e.preventDefault();
+        window.location = '3.stranka.html#tatra';
+    });
+    $('#hypoteka3').on('click', '.clickable', function (e) {
+        e.preventDefault();
+        window.location = '3.stranka.html#vub';
+    });
 });
