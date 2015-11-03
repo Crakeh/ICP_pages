@@ -50,7 +50,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputsuma" class="control-label">Suma (€)</label>
-                  <sup>?</sup>
+                  <sup title="Suma, ktorú si chcete požičať" style="cursor:help">?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" id="inputsuma" placeholder="" class="form-control">
@@ -59,7 +59,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputdlzka" class="control-label">Dĺžka splatnosti (rokov)</label>
-                  <sup>?</sup>
+                  <sup title="Obdobie, počas ktorej chcete splácať" style="cursor:help">?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputdlzka">
@@ -68,7 +68,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputfix" class="control-label">Fixácia (rokov)</label>
-                  <sup>?</sup>
+                  <sup title="Počet rokov, počas ktorý ostane úrok nemenný" style="cursor:help">?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputfix">
@@ -77,7 +77,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
-                  <sup>?</sup>
+                  <sup title="Výška Vašeho mesačného príjmu" style="cursor:help">?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputmes">
@@ -85,9 +85,8 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-6">
-                  <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu (€) &nbsp;
-                    <sup>1 ?</sup>
-                  </label>
+                  <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu (€)</label>
+                  <sup>1</sup> <sup title="Hodnota Vašeho domu alebo bytu" style="cursor:help">?</sup>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputhod">
@@ -135,17 +134,32 @@
     </div>
     <script>
       function printValue(sliderID, textbox) {
-                                                          var x = document.getElementById(textbox);
-                                                          var y = document.getElementById(sliderID);
-                                                          x.value = y.value;
-                                                      }
+        var x = document.getElementById(textbox);
+        var y = document.getElementById(sliderID);
+        x.value = y.value;}
                                                   
-                                                      window.onload = function() { 
-                                                        printValue('slider1', 'inputsuma'); 
-                                                        printValue('slider2', 'inputdlzka'); 
-                                                        printValue('slider3', 'inputfix'); 
-                                                        printValue('slider4', 'inputmes');
-                                                        printValue('slider5', 'inputhod'); }
+      window.onload = function() { 
+        printValue('slider1', 'inputsuma'); 
+        printValue('slider2', 'inputdlzka'); 
+        printValue('slider3', 'inputfix'); 
+        printValue('slider4', 'inputmes');
+        printValue('slider5', 'inputhod');}
+    </script>
+    <script>
+      $('#dalej').on('click', function (e) {
+        if ((parseInt($('#inputsuma').val(),10) > 900) && (parseInt($('#inputsuma').val(),10) < 150000)){
+           e.preventDefault();
+           window.location = 'stranka_2.html#porovnanie';
+         };
+        if ((parseInt($('#inputsuma').val(),10) > 149999) && (parseInt($('#inputsuma').val(),10) < 300000)){
+           e.preventDefault();
+           window.location = 'stranka_2_1.html#porovnanie';
+         };
+        if ((parseInt($('#inputsuma').val(),10) > 299999) && (parseInt($('#inputsuma').val(),10) < 500000)){
+           e.preventDefault();
+           window.location = 'stranka_2_2.html#porovnanie';
+         };
+      });
     </script>
   
 
