@@ -8,12 +8,17 @@
 
 @my-background : #74AFAD;
 @call-to-action : #D9853B;
+@my-darker: #558C89;
 .my-header {
-  background-color: #558C89;
+  background-color: @my-darker;
 }
 
 .call-to-action {
   color: @call-to-action;
+}
+
+.modal-header {
+  background-color: @my-darker;
 }
 
 .enjoy-css {
@@ -588,7 +593,7 @@ monospace;
 //** Modal title line-height
 @modal-title-line-height : @line-height-base;
 //** Background color of modal content area
-@modal-content-bg : #fff;
+@modal-content-bg : @my-background;
 //** Modal content border color
 @modal-content-border-color : rgba(0, 0, 0, .2);
 //** Modal content border color **for IE8**

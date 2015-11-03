@@ -7,10 +7,13 @@
  * Based on Bootstrap v3.3.4
 */
 .my-header {
-  background-color: #558C89;
+  background-color: #558c89;
 }
 .call-to-action {
   color: #d9853b;
+}
+.modal-header {
+  background-color: #558c89;
 }
 .enjoy-css {
   -webkit-box-sizing: content-box;
@@ -5834,7 +5837,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #ffffff;
+  background-color: #74afad;
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;

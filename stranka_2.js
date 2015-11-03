@@ -159,19 +159,6 @@ $(document).ready(function () {
 
     //$('#navbar').load('navbar.html');
 
-    $('#porovnajDialog').dialog({
-        draggable: false,
-        resizable: false,
-        width: 700,
-        modal: true,
-        autoOpen: false,
-        buttons: {
-            "Zatvorit": function () {
-                $(this).dialog('close');
-            }
-        }
-    });
-
     //$('#dalej').on('click', function (e) {
     //    var suma = $('#sumaInput').val();
     //    if (suma > 100000) {
@@ -216,10 +203,9 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.porovnaj-btn', function (e) {
-        var dialog = $('#porovnajDialog');
+        var dialog = $('#porovnajDialog').find('.modal-body');
         dialog.empty();
         dialog.html(buildComparisonTable(filterCheckedMortgages(mortgages)));
-        dialog.dialog('open');
     });
 
     var porovnajBtn = $('#porovnajBtn');
