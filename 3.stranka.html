@@ -36,7 +36,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-           <!-- <img src="logo.JPG" class="img-responsive"> !-->
+            <!-- <img src="logo.JPG" class="img-responsive"> !-->
             <h1 style="font-size:3em; font-color:#ffffff;">Hypoteky</h1>
           </div>
         </div>
@@ -115,7 +115,7 @@
 
 
 
-                                    <p class="splatka">170 € / mes.</p>
+                                    <p class="splatka"><span id="mes_spl">170</span> € / mes.</p>
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-                                        <i class="fa fa-hourglass"></i>2 roky</p>
+                                      <i class="fa fa-hourglass"></i><span id="fix">2</span> roky</p>
 
 
 
@@ -155,7 +155,7 @@
 
 
 
-                                        <i class="fa fa-line-chart"></i>4,56%</p>
+                                        <i class="fa fa-line-chart"></i><span id="urok">4,56</span>%</p>
 
 
 
@@ -171,7 +171,7 @@
 
 
 
-                                        <i class="fa fa-plus"></i>15600€</p>
+                                      <i class="fa fa-plus"></i><span id="prep">15600</span> €</p>
 
 
 
@@ -256,7 +256,7 @@
                 <label for="row" class="">
                   <sup>1</sup>Nepovinné pole</label>
                 <div class="col-sm-2 col-sm-offset-10">
-                  <button type="submit" class="btn btn-warning darkorange">Prepočitaj</button>
+                  <button type="button" class="btn btn-warning darkorange call-to-action" onclick="prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep')">Prepočitaj</button>
                 </div>
               </div>
             </div>
@@ -357,6 +357,47 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      //"prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep')"
+                      //textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4
+      function isInt(n){
+    	return (parseInt(n,10));
+		}
+                      function prepocitaj(textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4) {
+                        var txtb1 = document.getElementById(textbox1);
+                        var txtb2 = document.getElementById(textbox2);
+                        var txtb3 = document.getElementById(textbox3);
+                        var txtb4 = document.getElementById(textbox4);
+                        var txtb5 = document.getElementById(textbox5);
+                        var spn1 = document.getElementById(span1);
+                        var spn2 = document.getElementById(span2);
+                        var spn3 = document.getElementById(span3);
+                        var spn4 = document.getElementById(span4);
+                        //document.getElementById(span2).textContent= document.getElementById(textbox3).value ;
+                        if (!txtb3.value || !txtb2.value || !txtb1.value || !txtb4.value){
+                        	return confirm('Neboli vyplnené všetky povinné polia');}
+                        
+                        if (!isInt(txtb1.value) || !isInt(txtb2.value) || !isInt(txtb3.value) || !isInt(txtb4.value) ){
+                          	return confirm('Zadane hodnoty maju byt cisla!');}
+                          
+                        if (txtb3.value > parseInt(txtb2.value,10)){
+                          return confirm('Dĺžka fixacie nemôže byť väčšia ako dĺžka splátky.');
+                        }
+                        
+                        spn2.textContent = txtb3.value;
+                        // HU*(((1+((0.01*i)/na))**(n*na))*((0.01*i)/na))/(((1+((0.01*i)/na))**(n*na))-1) kde je  HU - výška úveru, n – počet rokov, na – počet splátok do roka, i – úroková sadzba 
+                        var i = parseFloat(spn3.textContent);
+                        var na = 12;
+                        var n = parseInt(txtb2.value,10);
+                        var MU = parseInt(txtb1.value,10)
+                        spn1.textContent = Math.floor(MU*((Math.pow((1+((0.01*i)/na)),(n*na)))*((0.01*i)/na))/((Math.pow((1+((0.01*i)/na)),(n*na)))-1));
+                        spn4.textContent = Math.floor((parseFloat(spn1.textContent)*n*na) - txtb1.value);
+                        if (parseInt(spn1.textContent,10) > parseInt(txtb4.value,10)){
+                          return confirm('Pozor výška splátky väčšia ako mesačný plat!');
+                        }
+                        
+                      }
+    </script>
   
 
 </body></html>
