@@ -20,6 +20,31 @@ function parseMortgages() {
     return mortgages;
 }
 
+function loadMortgage(mortgage) {
+    var template = $('<div class="col-md-12 hypoteka"></div>').load('hypoteka.html');
+    template.attr('id', mortgage.id);
+    template.find('.splatka').find('.hodnota').text(addSpaces(mortgage.splatka));
+    template.find('.urok').find('.hodnota').text(mortgage.urok.toString().replace(".", ","));
+    template.find('.fixacia').find('.hodnota').text(addSpaces(mortgage.fixacia));
+    template.find('.preplatenie').find('.hodnota').text(addSpaces(mortgage.preplatenie));
+    template.find('.banka').text(mortgage.banka);
+    template.find('.hodnotenie-cislo').text(mortgage.hodnotenie.toString().replace(".", ",") + "/10")
+    template.find('img').attr('src', mortgage.imgSrc);
+    return template;
+}
+
+function addSpaces(nStr) {
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? ',' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ' ' + '$2');
+    }
+    return x1 + x2;
+}
+
 function sortMortgages(mortgages, criterium, asc) {
     if (asc) {
         return mortgages.sort(function (b, a) {
@@ -100,9 +125,70 @@ function filterCheckedMortgages(mortgages) {
     return checked;
 }
 
+//mortgages = [
+//    {
+//        id: 'hypoteka1',
+//        splatka: 150,
+//        fixacia: 3,
+//        urok: 4.5,
+//        preplatenie: 15000,
+//        hodnotenie: 8,
+//        imgSrc: 'zuno_logo.jpg'
+//    },
+//    {
+//        id: 'hypoteka2',
+//        splatka: 160,
+//        fixacia: 2,
+//        urok: 4.55,
+//        preplatenie: 15100,
+//        hodnotenie: 7.7,
+//        imgSrc: 'tatra_banka_logo.png'
+//    },
+//    {
+//        id: 'hypoteka3',
+//        splatka: 170,
+//        fixacia: 2,
+//        urok: 4.56,
+//        preplatenie: 15600,
+//        hodnotenie: 7.2,
+//        imgSrc: 'vub_banka_logo.jpg'
+//    }
+//];
+
 $(document).ready(function () {
 
     $('#navbar').load('navbar.html');
+
+    $('#porovnajDialog').dialog({
+        draggable: false,
+        resizable: false,
+        width: 700,
+        modal: true,
+        autoOpen: false,
+        buttons: {
+            "Zatvorit": function () {
+                $(this).dialog('close');
+            }
+        }
+    });
+
+    //_.forEach(mortgages, function (m) {
+    //    $('.hypoteky').append(loadMortgage(m));
+    //});
+
+    //for (var i = 0, len = mortgages.length; i < len; i++) {
+    //    $('.hypoteky').append(loadMortgage(mortgages[i]));
+    //}
+
+    //$(mortgages).each(function (m) {
+    //    $('.hypoteky').append(loadMortgage(m));
+    //});
+    //var variant = window.location.href.split('#')[1];
+
+    //if (variant == 'prva_varianta') {
+    //    loadMortgage();
+    //
+    //}
 
     mortgages = parseMortgages();
 
@@ -138,17 +224,4 @@ $(document).ready(function () {
     }, 10);
 
     $(document).on('scroll', movePorovnajBtn);
-
-    $('#porovnajDialog').dialog({
-        draggable: false,
-        resizable: false,
-        width: 700,
-        modal: true,
-        autoOpen: false,
-        buttons: {
-            "Zatvorit": function () {
-                $(this).dialog('close');
-            }
-        }
-    });
 });
