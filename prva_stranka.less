@@ -19,18 +19,7 @@
 // --------------------------------------------------
 //== Colors
 //
-//## Gray and brand colors for use across Bootstrap.
-@call-to-action : #D9853B;
-.call-to-action {
-  color: @call-to-action;
-}
-
-.hore {
-  position: fixed;
-  right: 5em;
-  bottom: 2em;
-}
-
+//## Gray and brand colors for use across Bootstrap
 @gray-base : #000;
 @gray-darker : lighten(@gray-base, 13.5%); // #222
 @gray-dark : lighten(@gray-base, 20%); // #333
@@ -743,6 +732,39 @@ monospace;
 
 /* PINGENDO COMMENT DO NOT REMOVE */
 
+@call-to-action : #D9853B;
+.call-to-action {
+  color: @call-to-action;
+}
+
+@my-dark: #558C89;
+.hore {
+  position: fixed;
+  right: 5em;
+  bottom: 2em;
+}
+
+.badge {
+  cursor: help;
+  background-color: @my-dark;
+}
+
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 5em/1 "convergence", Helvetica, sans-serif;
+  color: white;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.slider-max {
+  float: right;
+  margin-top: -22px;
+}
+
 .slider-style {
   padding: 2%;
   height: 55px;
@@ -760,7 +782,7 @@ monospace;
 }
 
 .header {
-  background: #558C89;
+  background: @my-dark;
 }
 
 .text-color-white {
@@ -768,11 +790,11 @@ monospace;
 }
 
 .darkorange {
-  background: #D9853B;
+  background: @call-to-action;
 }
 
 .darkerorange {
-  background: #D9853B;
+  background: @call-to-action;
 }
 
 .darkerorange2 {}

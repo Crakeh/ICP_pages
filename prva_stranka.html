@@ -6,39 +6,13 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="prva_stranka.css" rel="stylesheet" type="text/css">
   </head><body>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><span>Home</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">O nas</a>
-            </li>
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="section header">
       <div class="container">
         <div class="row">
-          <div class="col-md-2">
-            <img src="logo.JPG" class="img-responsive">
+          <div class="col-md-12">
+            <div class="enjoy-css">Hypotéky</div>
+            <script type="text/javascript" script-name="convergence" src="http://use.edgefonts.net/convergence.js"></script>
           </div>
-          <div class="col-md-9 "></div>
         </div>
       </div>
     </div>
@@ -50,7 +24,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputsuma" class="control-label">Suma (€)</label>
-                  <sup title="Suma, ktorú si chcete požičať" style="cursor:help">?</sup>
+                  <span class="badge" data-toggle="tooltip" title="Suma, ktorú si chcete požičať" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" id="inputsuma" placeholder="" class="form-control">
@@ -59,7 +33,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputdlzka" class="control-label">Dĺžka splatnosti (rokov)</label>
-                  <sup title="Obdobie, počas ktorej chcete splácať" style="cursor:help">?</sup>
+                  <span class="badge" data-toggle="tooltip" title="Obdobie, počas ktorého chcete splácať" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputdlzka">
@@ -68,7 +42,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputfix" class="control-label">Fixácia (rokov)</label>
-                  <sup title="Počet rokov, počas ktorý ostane úrok nemenný" style="cursor:help">?</sup>
+                  <span class="badge" data-toggle="tooltip" title="Počet rokov, počas ktorý ostane úrok nemenný" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputfix">
@@ -77,7 +51,7 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
-                  <sup title="Výška Vašeho mesačného príjmu" style="cursor:help">?</sup>
+                  <span class="badge" data-toggle="tooltip" title="Výška Vášho mesačného príjmu" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputmes">
@@ -86,7 +60,8 @@
               <div class="form-group">
                 <div class="col-sm-6">
                   <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu (€)</label>
-                  <sup>1</sup> <sup title="Hodnota Vašeho domu alebo bytu" style="cursor:help">?</sup>
+                  <sup>1</sup>
+                  <span class="badge" data-toggle="tooltip" title="Hodnota Vášho domu alebo bytu" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" id="inputhod">
@@ -94,7 +69,7 @@
               </div>
             </form>
             <div class="row">
-              <label for="row">
+              <label>
                 <sup>1</sup>Nepovinné pole</label>
               <div class="col-sm-2 col-sm-offset-10">
                 <button type="submit" class="btn btn-warning darkorange">Ďalej</button>
@@ -104,29 +79,29 @@
           <div class="col-md-5 text-justify">
             <div class="slider-style" data-role="rangeslider">
               <sup>1.000</sup>
-              <input type="range" id="slider1" min="1000" max="500000" step="10" value="1000" onchange="printValue('slider1','inputsuma')">
+              <input type="range" id="slider1" min="1000" max="500000" step="10" data-input="inputsuma" value="1000">
               <span class="range-slider-active-segment"></span>
-              <sup style="float:right; margin-top:-22px;">500.000</sup>
+              <sup class="slider-max">500.000</sup>
             </div>
             <div class="slider-style" data-role="rangeslider">
               <sup>1</sup>
-              <input type="range" id="slider2" min="1" max="50" step="1" onchange="printValue('slider2','inputdlzka')" value="1">
-              <sup style="float:right; margin-top:-22px;">50</sup>
+              <input type="range" id="slider2" min="1" max="50" step="1" data-input="inputdlzka" value="1">
+              <sup class="slider-max">50</sup>
             </div>
             <div data-role="rangeslider" class="slider-style" draggable="true">
               <sup>1</sup>
-              <input type="range" id="slider3" min="1" max="30" step="1" onchange="printValue('slider3','inputfix')" value="1">
-              <sup style="float:right; margin-top:-22px;">30</sup>
+              <input type="range" id="slider3" min="1" max="30" step="1" data-input="inputfix" value="1">
+              <sup class="slider-max">30</sup>
             </div>
             <div data-role="rangeslider" class="slider-style">
               <sup>300</sup>
-              <input type="range" id="slider4" min="300" max="5000" step="10" onchange="printValue('slider4','inputmes')" value="300">
-              <sup style="float:right; margin-top:-22px;">5.000</sup>
+              <input type="range" id="slider4" min="300" max="5000" step="10" data-input="inputmes" value="300">
+              <sup class="slider-max">5.000</sup>
             </div>
             <div data-role="rangeslider" class="slider-style">
               <sup>1.000</sup>
-              <input type="range" id="slider5" min="1000" max="500000" step="10" onchange="printValue('slider5','inputhod')" value="1000">
-              <sup style="float:right; margin-top:-22px;">500.000</sup>
+              <input type="range" id="slider5" min="1000" max="500000" step="10" data-input="inputhod" value="1000">
+              <sup class="slider-max">500.000</sup>
             </div>
           </div>
         </div>
@@ -134,31 +109,40 @@
     </div>
     <script>
       function printValue(sliderID, textbox) {
-        var x = document.getElementById(textbox);
-        var y = document.getElementById(sliderID);
-        x.value = y.value;}
-                                                  
-      window.onload = function() { 
-        printValue('slider1', 'inputsuma'); 
-        printValue('slider2', 'inputdlzka'); 
-        printValue('slider3', 'inputfix'); 
-        printValue('slider4', 'inputmes');
-        printValue('slider5', 'inputhod');}
-    </script>
-    <script>
-      $('#dalej').on('click', function (e) {
-        if ((parseInt($('#inputsuma').val(),10) > 900) && (parseInt($('#inputsuma').val(),10) < 150000)){
-           e.preventDefault();
-           window.location = 'stranka_2.html#prvy';
-         };
-        if ((parseInt($('#inputsuma').val(),10) > 149999) && (parseInt($('#inputsuma').val(),10) < 300000)){
-           e.preventDefault();
-           window.location = 'stranka_2_1.html#druhy';
-         };
-        if ((parseInt($('#inputsuma').val(),10) > 299999) && (parseInt($('#inputsuma').val(),10) < 500000)){
-           e.preventDefault();
-           window.location = 'stranka_2_2.html#treti';
-         };
+          var x = $('#' + textbox);
+          var y = $('#' + sliderID);
+          x.val(y.val());
+      }
+  
+      $(document).ready(function () {
+          printValue('slider1', 'inputsuma');
+          printValue('slider2', 'inputdlzka');
+          printValue('slider3', 'inputfix');
+          printValue('slider4', 'inputmes');
+          printValue('slider5', 'inputhod');
+  
+          $('#dalej').on('click', function (e) {
+              e.preventDefault();
+              var inputSuma = parseInt($('#inputsuma').val(), 10);
+  
+              if ((inputSuma > 900) && (inputSuma < 150000)) {
+                  window.location = 'stranka_2.html#prvy';
+              } else if ((inputSuma >= 150000) && (inputSuma < 300000)) {
+                  window.location = 'stranka_2_1.html#druhy';
+              } else if ((inputSuma >= 300000) && (inputSuma < 500000)) {
+                  window.location = 'stranka_2_2.html#treti';
+              }
+          });
+  
+          $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+          });
+
+          $('input[type=range]').on('change', function (e) {
+              var that = $(this);
+              printValue(that.attr('id'), that.data('input'))
+          })
+  
       });
     </script>
   

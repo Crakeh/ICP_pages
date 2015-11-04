@@ -12,14 +12,6 @@
  *   box-shadow : 0px 0px 10px black !important;
  * }
 */
-.call-to-action {
-  color: #d9853b;
-}
-.hore {
-  position: fixed;
-  right: 5em;
-  bottom: 2em;
-}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -6784,6 +6776,32 @@ body {
   background-attachment: fixed;
 }
 /* PINGENDO COMMENT DO NOT REMOVE */
+.call-to-action {
+  color: #d9853b;
+}
+.hore {
+  position: fixed;
+  right: 5em;
+  bottom: 2em;
+}
+.badge {
+  cursor: help;
+  background-color: #558c89;
+}
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal 5em/1 "convergence", Helvetica, sans-serif;
+  color: white;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.slider-max {
+  float: right;
+  margin-top: -22px;
+}
 .slider-style {
   padding: 2%;
   height: 55px;
@@ -6798,14 +6816,14 @@ body {
   background: orange;
 }
 .header {
-  background: #558C89;
+  background: #558c89;
 }
 .text-color-white {
   color: white;
 }
 .darkorange {
-  background: #D9853B;
+  background: #d9853b;
 }
 .darkerorange {
-  background: #D9853B;
+  background: #d9853b;
 }
