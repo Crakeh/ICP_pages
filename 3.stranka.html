@@ -6,38 +6,12 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="prva_stranka.css" rel="stylesheet" type="text/css">
   </head><body>
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><span>Home</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">O nas</a>
-            </li>
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
     <div class="section header">
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <!-- <img src="logo.JPG" class="img-responsive"> !-->
-            <h1 style="font-size:3em; color:#ffffff;">Hypoteky</h1>
+            <div class="enjoy-css">Hypotéky</div>
+            <script type="text/javascript" script-name="convergence" src="http://use.edgefonts.net/convergence.js"></script>
           </div>
         </div>
       </div>
@@ -47,146 +21,40 @@
             <div class="col-md-5 text-color-white">
               <h3 contenteditable="true">
                 <a href="#">
-
-
-
-                        <div class="col-md-4">
-
-
-
-                            <div class="row text-center">
-
-
-
-                                <div class=" ">
-
-
-
-                                    <img src="vub_banka_logo.jpg" style="width:130px;">
-
-
-
+                            <div class="col-md-4">
+                                <div class="row text-center">
+                                    <div class=" ">
+                                        <img src="vub_banka_logo.jpg" style="width:130px;">
+                                    </div>
                                 </div>
-
-
-
+                                <div class="row">
+                                    <h3 class="text-center text-color-white">VUB Banka
+                                        <br>
+                                    </h3>
+                                </div>
                             </div>
-
-
-
-                            <div class="row">
-
-
-
-                                <h3 class="text-center text-color-white">VUB Banka
-
-
-
-                                    <br>
-
-
-
-                                </h3>
-
-
-
+                            <div class="col-md-8 text-color-white">
+                                <div class="row ">
+                                    <div class="col-md-6 text-center" title="Splatka">
+                                        <p class="splatka"><span id="mes_spl">170</span> € / mes.</p>
+                                    </div>
+                                    <div class="col-md-6 fixacia text-center" title="Fixacia">
+                                        <p>
+                                            <i class="fa fa-hourglass"></i><span id="fix">2</span> roky</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 text-center urok" title="Urok">
+                                        <p>
+                                            <i class="fa fa-line-chart"></i><span id="urok">4,56</span>%</p>
+                                    </div>
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie">
+                                        <p>
+                                            <i class="fa fa-plus"></i><span id="prep">15600</span> €</p>
+                                    </div>
+                                </div>
                             </div>
-
-
-
-                          
-
-
-
-                        </div>
-
-
-
-                        <div class="col-md-8 text-color-white">
-
-
-
-                            <div class="row ">
-
-
-
-                                <div class="col-md-6 text-center" title="Splatka">
-
-
-
-                                    <p class="splatka"><span id="mes_spl">170</span> € / mes.</p>
-
-
-
-                                </div>
-
-
-
-                                <div class="col-md-6 fixacia text-center" title="Fixacia">
-
-
-
-                                    <p>
-
-
-
-                                      <i class="fa fa-hourglass"></i><span id="fix">2</span> roky</p>
-
-
-
-                                </div>
-
-
-
-                            </div>
-
-
-
-                            <div class="row">
-
-
-
-                                <div class="col-md-6 text-center urok" title="Urok">
-
-
-
-                                    <p>
-
-
-
-                                        <i class="fa fa-line-chart"></i><span id="urok">4,56</span>%</p>
-
-
-
-                                </div>
-
-
-
-                                <div class="col-md-6 preplatenie text-center" title="Preplatenie">
-
-
-
-                                    <p>
-
-
-
-
-                                      <i class="fa fa-plus"></i><span id="prep">15600</span> €</p>
-
-
-
-
-                                </div>
-
-
-
-                            </div>
-
-
-
-                        </div>
-
-              		</a>
+                        </a>
                 <br>
               </h3>
               <p></p>
@@ -254,10 +122,10 @@
                   </div>
                 </form>
                 <div class="row">
-                  <label for="row" class="">
+                  <label>
                     <sup>1</sup>Nepovinné pole</label>
                   <div class="col-sm-2 col-sm-offset-10">
-                    <button type="button" class="btn btn-warning darkorange call-to-action" onclick="prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep')">Prepočitaj</button>
+                    <button type="button" class="btn btn-warning darkorange" id="prepocitajBtn">Prepočitaj</button>
                   </div>
                 </div>
               </div>
@@ -335,7 +203,7 @@
             <div class="col-md-4">
               <div class="col-md-6">
                 <div class="col-sm-5 col-sm-offset-0">
-                  <button type="submit" class="btn btn-warning darkorange call-to-action">Späť na predošlú
+                  <button type="submit" class="btn btn-warning darkorange">Späť na predošlú
                     <br>stránku</button>
                 </div>
               </div>
@@ -360,44 +228,48 @@
       </div>
       <script type="text/javascript">
         //"prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep')"
-                                //textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4
-                function isInt(n){
-              	return (parseInt(n,10));
-          		}
-                                function prepocitaj(textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4) {
-                                  var txtb1 = document.getElementById(textbox1);
-                                  var txtb2 = document.getElementById(textbox2);
-                                  var txtb3 = document.getElementById(textbox3);
-                                  var txtb4 = document.getElementById(textbox4);
-                                  var txtb5 = document.getElementById(textbox5);
-                                  var spn1 = document.getElementById(span1);
-                                  var spn2 = document.getElementById(span2);
-                                  var spn3 = document.getElementById(span3);
-                                  var spn4 = document.getElementById(span4);
-                                  //document.getElementById(span2).textContent= document.getElementById(textbox3).value ;
-                                  if (!txtb3.value || !txtb2.value || !txtb1.value || !txtb4.value){
-                                  	return confirm('Neboli vyplnené všetky povinné polia');}
-                                  
-                                  if (!isInt(txtb1.value) || !isInt(txtb2.value) || !isInt(txtb3.value) || !isInt(txtb4.value) ){
-                                    	return confirm('Zadane hodnoty maju byt cisla!');}
-                                    
-                                  if (txtb3.value > parseInt(txtb2.value,10)){
-                                    return confirm('Dĺžka fixacie nemôže byť väčšia ako dĺžka splátky.');
-                                  }
-                                  
-                                  spn2.textContent = txtb3.value;
-                                  // HU*(((1+((0.01*i)/na))**(n*na))*((0.01*i)/na))/(((1+((0.01*i)/na))**(n*na))-1) kde je  HU - výška úveru, n – počet rokov, na – počet splátok do roka, i – úroková sadzba 
-                                  var i = parseFloat(spn3.textContent);
-                                  var na = 12;
-                                  var n = parseInt(txtb2.value,10);
-                                  var MU = parseInt(txtb1.value,10)
-                                  spn1.textContent = Math.floor(MU*((Math.pow((1+((0.01*i)/na)),(n*na)))*((0.01*i)/na))/((Math.pow((1+((0.01*i)/na)),(n*na)))-1));
-                                  spn4.textContent = Math.floor((parseFloat(spn1.textContent)*n*na) - txtb1.value);
-                                  if (parseInt(spn1.textContent,10) > parseInt(txtb4.value,10)){
-                                    return confirm('Pozor výška splátky väčšia ako mesačný plat!');
-                                  }
-                                  
-                                }
+        //textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4
+        function parseDec(n) {
+            return (parseInt(n, 10));
+        }
+        function prepocitaj(textbox1, textbox2, textbox3, textbox4, textbox5, span1, span2, span3, span4) {
+            var txtb1 = $('#'+textbox1).val();
+            var txtb2 = $('#'+textbox2).val();
+            var txtb3 = $('#'+textbox3).val();
+            var txtb4 = $('#'+textbox4).val();
+            var txtb5 = $('#'+textbox5).val();
+            var spn1 = $('#'+span1);
+            var spn2 = $('#'+span2);
+            var spn3 = $('#'+span3);
+            var spn4 = $('#'+span4);
+            //document.getElementById(span2).textContent= document.getElementById(textbox3).value ;
+            if (!(txtb3 && txtb2 && txtb1 && txtb4)) {
+                return confirm('Neboli vyplnené všetky povinné polia');
+            }
+            if (!(parseDec(txtb1) && parseDec(txtb2) && parseDec(txtb3) && parseDec(txtb4))) {
+                return confirm('Zadane hodnoty maju byt cisla!');
+            }
+            if (txtb3 > parseInt(txtb2, 10)) {
+                return confirm('Dĺžka fixacie nemôže byť väčšia ako dĺžka splátky.');
+            }
+            spn2 = txtb3;
+            // HU*(((1+((0.01*i)/na))**(n*na))*((0.01*i)/na))/(((1+((0.01*i)/na))**(n*na))-1) kde je  HU - výška úveru, n – počet rokov, na – počet splátok do roka, i – úroková sadzba
+            var i = parseFloat(spn3.text());
+            var na = 12;
+            var n = parseDec(txtb2);
+            var MU = parseDec(txtb1);
+            spn1.text(Math.floor(MU * ((Math.pow((1 + ((0.01 * i) / na)), (n * na))) * ((0.01 * i) / na)) / ((Math.pow((1 + ((0.01 * i) / na)), (n * na))) - 1)));
+            spn4.text(Math.floor((parseFloat(spn1.text()) * n * na) - txtb1));
+            if (parseDec(spn1.text()) > parseDec(txtb4)) {
+                return confirm('Pozor výška splátky väčšia ako mesačný plat!');
+            }
+        }
+
+        $(document).ready(function () {
+            $('#prepocitajBtn').on('click', function(e) {
+                prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep');
+            });
+        });
       </script>
     </div>
   
