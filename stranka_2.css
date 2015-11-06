@@ -15,6 +15,9 @@
 .modal-header {
   background-color: #558c89;
 }
+.modal-body {
+  font-size: 4em;
+}
 .enjoy-css {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;

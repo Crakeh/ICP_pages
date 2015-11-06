@@ -20,31 +20,6 @@ function parseMortgages() {
     return mortgages;
 }
 
-function loadMortgage(mortgage) {
-    var template = $('<div class="col-md-12 hypoteka"></div>').load('hypoteka.html');
-    template.attr('id', mortgage.id);
-    template.find('.splatka').find('.hodnota').text(addSpaces(mortgage.splatka));
-    template.find('.urok').find('.hodnota').text(mortgage.urok.toString().replace(".", ","));
-    template.find('.fixacia').find('.hodnota').text(addSpaces(mortgage.fixacia));
-    template.find('.preplatenie').find('.hodnota').text(addSpaces(mortgage.preplatenie));
-    template.find('.banka').text(mortgage.banka);
-    template.find('.hodnotenie-cislo').text(mortgage.hodnotenie.toString().replace(".", ",") + "/10")
-    template.find('img').attr('src', mortgage.imgSrc);
-    return template;
-}
-
-function addSpaces(nStr) {
-    nStr += '';
-    x = nStr.split('.');
-    x1 = x[0];
-    x2 = x.length > 1 ? ',' + x[1] : '';
-    var rgx = /(\d+)(\d{3})/;
-    while (rgx.test(x1)) {
-        x1 = x1.replace(rgx, '$1' + ' ' + '$2');
-    }
-    return x1 + x2;
-}
-
 function sortMortgages(mortgages, criterium, asc) {
     if (asc) {
         return mortgages.sort(function (b, a) {
@@ -76,11 +51,12 @@ function buildComparisonRow(mortgages, rowName, propertyName, bestMax) {
     var row = $('<tr><td>' + rowName + '</td></tr>');
     var i = 0, min = Number.POSITIVE_INFINITY, max = Number.NEGATIVE_INFINITY;
     _.forEach(mortgages, function (m) {
-        row.append($('<td id='+propertyName+i+'>' + m[propertyName] + '</td>'));
-        if (m[propertyName] < min) {
+        var value = m[propertyName];
+        row.append($('<td id=' + propertyName + i + '>' + value.toLocaleString('sk') + '</td>'));
+        if (value < min) {
             min = i;
         }
-        if (m[propertyName] > max) {
+        if (value > max) {
             max = i;
         }
         i++;
@@ -105,12 +81,12 @@ function buildComparisonTable(mortgages) {
             banks.append($('<th>' + m.banka + '</th>'));
         });
         table.append(banks);
-        table.append(buildComparisonRow(mortgages, 'Splatky', 'splatka', false));
-        table.append(buildComparisonRow(mortgages, 'Fixacie', 'fixacia', true));
-        table.append(buildComparisonRow(mortgages, 'Uroky', 'urok', false));
+        table.append(buildComparisonRow(mortgages, 'Splátky', 'splatka', false));
+        table.append(buildComparisonRow(mortgages, 'Fixácie', 'fixacia', true));
+        table.append(buildComparisonRow(mortgages, 'Úroky', 'urok', false));
         table.append(buildComparisonRow(mortgages, 'Preplatenia', 'preplatenie', false));
     } else {
-        table = $('<h3>Vyberte si aspon dve hypoteky</h3>');
+        table = $('<h3>Vyberte si najmenej dve hypotéky</h3>');
     }
     return table;
 }
@@ -124,66 +100,8 @@ function filterCheckedMortgages(mortgages) {
     });
     return checked;
 }
-//
-//mortgages = [
-//    {
-//        id: 'hypoteka1',
-//        splatka: 150,
-//        fixacia: 3,
-//        urok: 4.5,
-//        preplatenie: 15000,
-//        hodnotenie: 8,
-//        imgSrc: 'zuno_logo.jpg'
-//    },
-//    {
-//        id: 'hypoteka2',
-//        splatka: 160,
-//        fixacia: 2,
-//        urok: 4.55,
-//        preplatenie: 15100,
-//        hodnotenie: 7.7,
-//        imgSrc: 'tatra_banka_logo.png'
-//    },
-//    {
-//        id: 'hypoteka3',
-//        splatka: 170,
-//        fixacia: 2,
-//        urok: 4.56,
-//        preplatenie: 15600,
-//        hodnotenie: 7.2,
-//        imgSrc: 'vub_banka_logo.jpg'
-//    }
-//];
 
 $(document).ready(function () {
-
-    //$('#navbar').load('navbar.html');
-
-    //$('#dalej').on('click', function (e) {
-    //    var suma = $('#sumaInput').val();
-    //    if (suma > 100000) {
-    //        window.location = 'prva_stranka.html#adsfasd'
-    //    }
-    //});
-
-    //_.forEach(mortgages, function (m) {
-    //    $('.hypoteky').append(loadMortgage(m));
-    //});
-
-    //for (var i = 0, len = mortgages.length; i < len; i++) {
-    //    $('.hypoteky').append(loadMortgage(mortgages[i]));
-    //}
-
-    //$(mortgages).each(function (m) {
-    //    $('.hypoteky').append(loadMortgage(m));
-    //});
-
-    //window.location = 'jtvoja_stranka.html#prva_vanrinta'
-
-    //if (variant == 'prva_varianta') {
-    //    loadMortgage();
-    //
-    //}
 
     var variant = window.location.href.split('#')[1];
     if (variant == 'prvy') {
@@ -193,7 +111,6 @@ $(document).ready(function () {
     }
 
     mortgages = parseMortgages();
-
 
 
     $('.zoradenie').on('click', 'button', function (e) {
