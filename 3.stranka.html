@@ -203,6 +203,7 @@
           </div>
         </div>
       </div>
+
       <div class="section text-color-white">
         <div class="container">
           <div class="row">
@@ -228,7 +229,7 @@
       <div class="section">
         <div class="container">
           <div class="row" style="text-align:center; color:white;">
-            <div class="col-md-4 clickable" id="zuno">
+            <div class="col-md-4 clickable" id="zunoo">
               <img src="zuno_logo.jpg" style="height:130px; width:auto; margin:10px;">
               <h2>Zuno banka</h2>
               <p></p>
@@ -237,7 +238,7 @@
                 <br>15 600€</h3>
               <p></p>
             </div>
-            <div class="col-md-4 "  id="tatra">
+            <div class="col-md-4 "  id="tatraa">
             <div class="clickable">
               <img src="tatra_banka_logo.png" style="height:130px; width:auto; margin:10px;">
               <h2>Tatra banka</h2>
@@ -248,9 +249,9 @@
               <p></p>
               </div>
             </div>
-            <div class="col-md-4 clickable"  id="vub">
-              <img src="csob.jpg" style="height:130px; width:auto; margin:10px;">
-              <h2>CSOB banka</h2>
+            <div class="col-md-4 clickable"  id="vubb">
+              <img src="vub_banka_logo.jpg" style="height:130px; width:auto; margin:10px;">
+              <h2>Vub Banka </h2>
               <p></p>
               <h3>175 € / mesiac
                 <br>2 roky
@@ -261,21 +262,21 @@
           </div>
         </div>
       </div>
-
+    
  
-      </script>>
+     
       <div class="section">
         <div class="container">
           <div class="row">
             <div class="col-md-4">
               <div class="col-md-6">
-                <div class="col-sm-5 col-sm-offset-0">
+                <div class="col-sm-5 col-sm-offset-0" id="backk">
                   <button type="submit" class="btn btn-warning darkorange">Späť na predošlú
                     <br>stránku</button>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="col-sm-4 col-sm-offset-0">
+              <div class="col-md-6" id="homee">
+                <div class="col-sm-4 col-sm-offset-0" >
                   <button type="submit" class="btn btn-warning darkorange">Domovská
                     <br>stránka</button>
                 </div>
@@ -340,5 +341,36 @@
       </script>
     </div>
   
+    <script>
+
+    $('#zunoo').on('click', function (e) {
+        e.preventDefault();
+        window.location = '3.stranka.html#zuno';
+        $('html,body').scrollTop(0);
+        window.location.reload(true);
+    });
+    $('#tatraa').on('click', function (e) {
+        e.preventDefault();
+        window.location = '3.stranka.html#tatra';
+        $('html,body').scrollTop(0);
+        window.location.reload(true);
+    });
+    $('#vubb').on('click', function (e) {
+        e.preventDefault();
+        window.location = '3.stranka.html#vub';
+        $('html,body').scrollTop(0);
+        window.location.reload(true);
+    });
+     $('#backk').on('click', function (e) {
+        e.preventDefault();
+        window.location = 'stranka_2.html#prvy';
+
+    });
+      $('#homee').on('click', function (e) {
+        e.preventDefault();
+        window.location = 'prva_stranka.html';
+
+    });
+    </script>
 
 </body></html>
