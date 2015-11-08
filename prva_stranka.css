@@ -6818,6 +6818,10 @@ body {
 .header {
   background: #558c89;
 }
+.txt {
+  font-size: 1.25em;
+  color: white;
+}
 .text-color-white {
   color: white;
 }
