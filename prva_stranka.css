@@ -6831,3 +6831,6 @@ body {
 .darkerorange {
   background: #d9853b;
 }
+.clickable {
+  cursor: pointer;
+}
