@@ -61,20 +61,19 @@
 .hypoteka > .row > a:hover {
   color: white;
 }
-.legend {
-  font-size: 2em;
-  padding-bottom: 8rem;
+.legend-and-zoradenie {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
-.legend > div {
-  display: inline-block;
+.legend-and-zoradenie > .legend {
+  font-size: 2em;
+}
+.legend-and-zoradenie > .legend > span {
   margin-left: .2em;
 }
-.zoradenie {
-  transform: translateY(50%);
-  position: relative;
-  top: 50%;
+.legend-and-zoradenie > .zoradenie {
   font-size: 1.5em;
-  font-style: normal;
 }
 input[type=checkbox] {
   /* Double-sized Checkboxes */
@@ -96,12 +95,32 @@ input[type=checkbox] {
   right: 5em;
   bottom: 2em;
 }
-.porovnaj-btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.header-row {
+  height: 13rem;
+  position: relative;
 }
-.porovnaj-btn.fixed {
+.legend-and-zoradenie {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: inherit;
+}
+.legend-and-zoradenie > .legend {
+  font-size: 2em;
+}
+.legend-and-zoradenie > .legend > span {
+  margin-left: .2em;
+}
+.legend-and-zoradenie > .zoradenie {
+  font-size: 1.5em;
+}
+.porovnaj-btn-container {
+  height: inherit;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.porovnaj-btn-container > .porovnaj-btn.fixed {
   position: fixed;
   top: 5rem;
   right: 3rem;
