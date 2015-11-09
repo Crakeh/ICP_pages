@@ -38,7 +38,7 @@
                   <span class="badge" data-toggle="tooltip" title="Suma, ktorú si chcete požičať" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" id="inputsuma" placeholder="" class="form-control" style="margin-left:100px;">
+                  <input type="text" id="inputsuma" placeholder="" class="form-control" data-slider="sliderSuma" style="margin-left:100px;">
                 </div>
               </div>
               <div class="form-group">
@@ -47,7 +47,7 @@
                   <span class="badge" data-toggle="tooltip" title="Obdobie, počas ktorého chcete splácať" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="inputdlzka" style="margin-left:100px;">
+                  <input type="text" class="form-control" id="inputdlzka" data-slider="sliderDlzka" style="margin-left:100px;">
                 </div>
               </div>
               <div class="form-group">
@@ -56,7 +56,7 @@
                   <span class="badge" data-toggle="tooltip" title="Počet rokov, počas ktorý ostane úrok nemenný" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="inputfix" style="margin-left:100px;">
+                  <input type="text" class="form-control" id="inputfix" data-slider="sliderFix" style="margin-left:100px;">
                 </div>
               </div>
               <div class="form-group">
@@ -65,7 +65,7 @@
                   <span class="badge" data-toggle="tooltip" title="Výška Vášho mesačného príjmu" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="inputmes" style="margin-left:100px;">
+                  <input type="text" class="form-control" id="inputmes" data-slider="sliderMes" style="margin-left:100px;">
                 </div>
               </div>
               <div class="form-group">
@@ -75,7 +75,7 @@
                   <span class="badge" data-toggle="tooltip" title="Hodnota Vášho domu alebo bytu" data-placement="left">?</span>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control" id="inputhod" style="margin-left:100px;">
+                  <input type="text" class="form-control" id="inputhod" data-slider="sliderHod" style="margin-left:100px;">
                 </div>
               </div>
             </form>
@@ -90,28 +90,28 @@
           <div class="col-md-5 text-justify">
             <div class="slider-style" data-role="rangeslider">
               <sup>1.000</sup>
-              <input type="range" id="slider1" min="1000" max="500000" step="10" data-input="inputsuma" value="1000">
+              <input type="range" id="sliderSuma" min="1000" max="500000" step="10" data-input="inputsuma" value="1000">
               <span class="range-slider-active-segment"></span>
               <sup class="slider-max">500.000</sup>
             </div>
             <div class="slider-style" data-role="rangeslider">
               <sup>1</sup>
-              <input type="range" id="slider2" min="1" max="50" step="1" data-input="inputdlzka" value="1">
+              <input type="range" id="sliderDlzka" min="1" max="50" step="1" data-input="inputdlzka" value="1">
               <sup class="slider-max">50</sup>
             </div>
             <div data-role="rangeslider" class="slider-style" draggable="true">
               <sup>1</sup>
-              <input type="range" id="slider3" min="1" max="30" step="1" data-input="inputfix" value="1">
+              <input type="range" id="sliderFix" min="1" max="30" step="1" data-input="inputfix" value="1">
               <sup class="slider-max">30</sup>
             </div>
             <div data-role="rangeslider" class="slider-style">
               <sup>300</sup>
-              <input type="range" id="slider4" min="300" max="5000" step="10" data-input="inputmes" value="300">
+              <input type="range" id="sliderMes" min="300" max="5000" step="10" data-input="inputmes" value="300">
               <sup class="slider-max">5.000</sup>
             </div>
             <div data-role="rangeslider" class="slider-style">
               <sup>1.000</sup>
-              <input type="range" id="slider5" min="1000" max="500000" step="10" data-input="inputhod" value="1000">
+              <input type="range" id="sliderHod" min="1000" max="500000" step="10" data-input="inputhod" value="1000">
               <sup class="slider-max">500.000</sup>
             </div>
           </div>
@@ -124,13 +124,19 @@
           var y = $('#' + sliderID);
           x.val(y.val());
       }
+
+      function adjustSlider(sliderID, textbox) {
+          var x = $('#' + textbox);
+          var y = $('#' + sliderID);
+          y.val(x.val());
+      }
   
       $(document).ready(function () {
-          printValue('slider1', 'inputsuma');
-          printValue('slider2', 'inputdlzka');
-          printValue('slider3', 'inputfix');
-          printValue('slider4', 'inputmes');
-          printValue('slider5', 'inputhod');
+          printValue('sliderSuma', 'inputsuma');
+          printValue('sliderDlzka', 'inputdlzka');
+          printValue('sliderFix', 'inputfix');
+          printValue('sliderMes', 'inputmes');
+          printValue('sliderHod', 'inputhod');
   
           $('#dalej').on('click', function (e) {
               e.preventDefault();
@@ -149,10 +155,15 @@
               $('[data-toggle="tooltip"]').tooltip()
           });
 
-          $('input[type=range]').on('change', function (e) {
+          $('input[type=range]').on('input', function (e) {
               var that = $(this);
               printValue(that.attr('id'), that.data('input'))
-          })
+          });
+
+          $('input[type=text]').on('input', function (e) {
+              var that = $(this);
+              adjustSlider(that.data('slider'), that.attr('id'));
+          });
   
       });
     </script>
