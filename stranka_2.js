@@ -49,24 +49,43 @@ function debounce(func, wait, immediate) {
 
 function buildComparisonRow(mortgages, rowName, propertyName, bestMax) {
     var row = $('<tr><td>' + rowName + '</td></tr>');
-    var i = 0, min = Number.POSITIVE_INFINITY, max = Number.NEGATIVE_INFINITY;
+    var i = 0, min = Number.POSITIVE_INFINITY, max = Number.NEGATIVE_INFINITY, minId = [], maxId = [];
     _.forEach(mortgages, function (m) {
         var value = m[propertyName];
         row.append($('<td id=' + propertyName + i + '>' + value.toLocaleString('sk') + '</td>'));
         if (value < min) {
-            min = i;
+            min = value;
+            minId = [i];
+        } else if (value == min) {
+            minId.push(i);
         }
         if (value > max) {
-            max = i;
+            max = value;
+            maxId = [i];
+        } else if (value == max) {
+            maxId.push(i);
         }
         i++;
     });
+    var maxElement = false;
+    if (maxId.length == 1) {
+        maxElement = row.find('#' + propertyName + maxId[0]);
+    }
+    var minElement = false;
+    if (minId.length == 1) {
+        minElement = row.find('#' + propertyName + minId[0]);
+    }
+
     if (bestMax) {
-        row.find('#' + propertyName + max).addClass('best');
-        row.find('#' + propertyName + min).addClass('worst');
+        if (maxElement) {
+            maxElement.addClass('best');
+        }
+        if (minId.length == 1) {
+            minElement.addClass('worst');
+        }
     } else {
-        row.find('#' + propertyName + max).addClass('worst');
-        row.find('#' + propertyName + min).addClass('best');
+        maxElement.addClass('worst');
+        minElement.addClass('best');
     }
 
     return row;
