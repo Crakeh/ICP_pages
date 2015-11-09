@@ -191,5 +191,9 @@ $(document).ready(function () {
             placement: 'top',
             template: '<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>'
         })
-    })
+    });
+
+    $('.go-back').on('click', function (e) {
+        history.go(-1);
+    });
 });
