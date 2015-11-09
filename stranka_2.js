@@ -1,8 +1,10 @@
 /**
  * Created by Slaaavo on 30.10.2015.
  */
+var variant = 'prvy';
+
 function parseMortgages() {
-    var crudes = $('.hypoteka');
+    var crudes = $('#' + variant + '_variant').find('.hypoteka');
     var mortgages = [];
     for (var i = 0, len = crudes.length; i < len; i++) {
         var mortgage = {}, crude = $(crudes[i]);
@@ -122,7 +124,7 @@ function filterCheckedMortgages(mortgages) {
 
 $(document).ready(function () {
 
-    var variant = window.location.href.split('#')[1];
+    variant = window.location.href.split('#')[1];
     if (variant == 'prvy') {
         $('#prvy_variant').removeClass('hidden');
     } else if (variant == 'druhy') {
