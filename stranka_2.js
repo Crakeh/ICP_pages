@@ -122,6 +122,7 @@ function filterCheckedMortgages(mortgages) {
     return checked;
 }
 
+
 $(document).ready(function () {
 
     variant = window.location.href.split('#')[1];
@@ -146,7 +147,10 @@ $(document).ready(function () {
         for (var i = 0, len = sortedMortgages.length; i < len; i++) {
             $('.hypoteky').append($('#' + sortedMortgages[i].id));
         }
-
+        that.popover('show');
+        setTimeout(function () {
+            that.popover('hide');
+        }, 2000);
     });
 
     $(document).on('click', '.porovnaj-btn', function (e) {
@@ -178,4 +182,14 @@ $(document).ready(function () {
         e.preventDefault();
         window.location = '3.stranka.html#vub';
     });
+
+    $(function () {
+        $('[data-toggle="popover"]').popover({
+            container: 'body',
+            content: 'Zoradené',
+            trigger: 'manual',
+            placement: 'top',
+            template: '<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>'
+        })
+    })
 });

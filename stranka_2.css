@@ -49,6 +49,12 @@
 .clickable {
   cursor: pointer;
 }
+.popover {
+  background-color: #74afad !important;
+}
+.popover > .popover-title {
+  background-color: #74afad !important;
+}
 .hypoteka {
   padding: .2em;
   margin-bottom: .2em;
@@ -60,20 +66,6 @@
 }
 .hypoteka > .row > a:hover {
   color: white;
-}
-.legend-and-zoradenie {
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-}
-.legend-and-zoradenie > .legend {
-  font-size: 2em;
-}
-.legend-and-zoradenie > .legend > span {
-  margin-left: .2em;
-}
-.legend-and-zoradenie > .zoradenie {
-  font-size: 1.5em;
 }
 input[type=checkbox] {
   /* Double-sized Checkboxes */
