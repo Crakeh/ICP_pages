@@ -61,6 +61,7 @@
                         <br>
                     </h3>
                     <p></p>
+
                     <div style="padding-top:150px;" class="txt">
                         <br>-účelový úver hypotekárneho typu, zabezpečený nehnuteľnosťou
                         <br>
@@ -73,6 +74,7 @@
                         <br>-podmienky si vyberáte podľa potrieb nielen pri poskytnutí úveru, ale
                         prispôsobíme ich vašej aktuálnej situácii aj počas splácania
                         <p></p>
+
                         <p></p>
                     </div>
                 </div>
@@ -136,6 +138,7 @@
                         <div class="row">
                             <label>
                                 <sup>1</sup>Nepovinné pole</label>
+
                             <div class="col-sm-2 col-sm-offset-10">
                                 <button type="button" class="btn btn-warning darkorange" id="prepocitajBtn"
                                         style="margin-left:11px;">Prepočitaj
@@ -153,12 +156,14 @@
                 <div class="col-md-6">
                     <div class="row txt">
                         <h3>Plusy</h3>
+
                         <p>+ úver si namodelujete podľa svojich predstáv
                             <br>+ ušetríte na úrokoch a poplatkoch
                             <br>+ mimoriadne splátky až do výšky 20% ročne bez poplatku</p>
                     </div>
                     <div class="row txt">
                         <h3>Minusy</h3>
+
                         <p>- nutnosť dokladanie viacerých dokladov ktoré niesú ani potrebné
                             <br>- zdlhavejsi proces</p>
                     </div>
@@ -176,29 +181,41 @@
             <div class="row" style="text-align:center; color:white;">
                 <div class="col-md-4 clickable" id="zunoo">
                     <img src="zuno_logo.jpg" style="height:130px; width:auto; margin:10px;">
+
                     <h2>Zuno banka</h2>
+
                     <p></p>
+
                     <h3>190 € / mesiac
                         <br>2 roky
                         <br>15 600€</h3>
+
                     <p></p>
                 </div>
                 <div class="col-md-4 clickable" id="tatraa">
                     <img src="tatra_banka_logo.png" style="height:130px; width:auto; margin:10px;">
+
                     <h2>Tatra banka</h2>
+
                     <p></p>
+
                     <h3>180 € / mesiac
                         <br>2 roky
                         <br>15 600€</h3>
+
                     <p></p>
                 </div>
                 <div class="col-md-4 clickable" id="vubb">
                     <img src="vub_banka_logo.jpg" style="height:130px; width:auto; margin:10px;">
+
                     <h2>Vub Banka</h2>
+
                     <p></p>
+
                     <h3>175 € / mesiac
                         <br>2 roky
                         <br>15 600€</h3>
+
                     <p></p>
                 </div>
             </div>
@@ -274,22 +291,25 @@
                 return confirm('Pozor výška splátky väčšia ako mesačný plat!');
             }
         }
+
+        function loadContent(img_src, bank_name) {
+            var img = $('#banka-logo');
+            var meno = $('#banka-meno');
+            img.attr('src', img_src);
+            meno.text(bank_name);
+        }
+
         $(document).ready(function () {
 
             var type = window.location.hash.substr(1);
-            var img = $('#banka-logo');
-            var meno = $('#banka-meno');
             if (type == "zuno") {
-                img.attr('src', 'zuno_logo.jpg');
-                meno.text('Zuno');
+                loadContent('zuno_logo.jpg', 'Zuno');
             }
             else if (type == "tatra") {
-                img.attr('src', 'tatra_banka_logo.png');
-                meno.text('Tatra');
+                loadContent('tatra_banka_logo.png', 'Tatra');
             }
             else if (type == "vub") {
-                img.attr('src', 'vub_banka_logo.jpg');
-                meno.text('VUB');
+                loadContent('vub_banka_logo.jpg', 'VUB');
             }
 
             $('#prepocitajBtn').on('click', function (e) {
@@ -297,18 +317,18 @@
             });
             $('#zunoo').on('click', function (e) {
                 e.preventDefault();
-                window.location = '3.stranka.html#zuno';
-                window.location.reload(true);
+                loadContent('zuno_logo.jpg', 'Zuno');
+                $('body').scrollTop(0);
             });
             $('#tatraa').on('click', function (e) {
                 e.preventDefault();
-                window.location = '3.stranka.html#tatra';
-                window.location.reload(true);
+                loadContent('tatra_banka_logo.png', 'Tatra');
+                $('body').scrollTop(0);
             });
             $('#vubb').on('click', function (e) {
                 e.preventDefault();
-                window.location = '3.stranka.html#vub';
-                window.location.reload(true);
+                loadContent('vub_banka_logo.jpg', 'VUB');
+                $('body').scrollTop(0);
             });
             $('#backk').on('click', function (e) {
                 e.preventDefault();

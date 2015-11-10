@@ -196,4 +196,8 @@ $(document).ready(function () {
     $('.go-back').on('click', function (e) {
         history.go(-1);
     });
+
+    $('.hore').on('click', function (e) {
+        $('body').animate({scrollTop: 0});
+    })
 });
