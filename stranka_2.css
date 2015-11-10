@@ -40,6 +40,14 @@
 .hodnotenie-cislo {
   font-size: 4em;
 }
+.splatka,
+.fixacia {
+  margin-bottom: 3.6rem;
+}
+.urok,
+.preplatenie {
+  margin-bottom: 3.1rem;
+}
 .hodnotenie-cislo {
   padding-right: .2em;
 }

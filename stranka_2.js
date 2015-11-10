@@ -204,4 +204,10 @@ $(document).ready(function () {
     $('.clickable').hover(function (e) {
         $(this).find('.fa-chevron-right').toggleClass('fa-5x call-to-action');
     });
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            placement: 'bottom'
+        })
+    });
 });
