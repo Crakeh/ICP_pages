@@ -202,6 +202,6 @@ $(document).ready(function () {
     });
 
     $('.clickable').hover(function (e) {
-        $(this).find('.fa-chevron-right').toggleClass('fa-5x');
+        $(this).find('.fa-chevron-right').toggleClass('fa-5x call-to-action');
     });
 });
