@@ -199,5 +199,9 @@ $(document).ready(function () {
 
     $('.hore').on('click', function (e) {
         $('body').animate({scrollTop: 0});
-    })
+    });
+
+    $('.clickable').hover(function (e) {
+        $(this).find('.fa-chevron-right').toggleClass('fa-5x');
+    });
 });
