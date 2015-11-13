@@ -69,6 +69,8 @@
               <br>
               <br>-podmienky si vyberáte podľa potrieb nielen pri poskytnutí úveru, ale
               prispôsobíme ich vašej aktuálnej situácii aj počas splácania
+              <br>
+              <br>-Ročná percentná miera nákladov je 4.36%
               <p></p>
               <p></p>
             </div>
@@ -167,7 +169,7 @@
             <img src="zuno_logo.jpg" style="height:130px; width:auto; margin:10px;">
             <h2>Zuno banka</h2>
             <p></p>
-            <h3>190 € / mesiac
+            <h3>630 € / mesiac
               <br>2 roky
               <br>15 600€</h3>
             <p></p>
@@ -176,18 +178,18 @@
             <img src="tatra_banka_logo.png" style="height:130px; width:auto; margin:10px;">
             <h2>Tatra banka</h2>
             <p></p>
-            <h3>180 € / mesiac
-              <br>2 roky
-              <br>15 600€</h3>
+            <h3>700 € / mesiac
+              <br>3 roky
+              <br>12 300€</h3>
             <p></p>
           </div>
           <div class="col-md-4 clickable" id="vubb">
             <img src="vub_banka_logo.jpg" style="height:130px; width:auto; margin:10px;">
             <h2>Vub Banka</h2>
             <p></p>
-            <h3>175 € / mesiac
+            <h3>675 € / mesiac
               <br>2 roky
-              <br>15 600€</h3>
+              <br>21 900€</h3>
             <p></p>
           </div>
         </div>
@@ -267,12 +269,26 @@
                       img.attr('src', img_src);
                       meno.text(bank_name);
                   }
+      // argumenty - mesacna splatka , fixacia v rokoch , utok v percentach, preplatok
+      			function init_page(splatka,fix,urok,prep){
+                  
+                  var spn1 = $('#mes_spl');
+                  var spn2 = $('#fix');
+                  var spn3 = $('#urok');
+                  var spn4 = $('#prep');
+                  spn1.text(splatka);
+                  spn2.text(fix);
+                  spn3.text(urok);
+                  spn4.text(prep);
+                  
+                }
           
                   $(document).ready(function () {
           
                       var type = window.location.hash.substr(1);
                       if (type == "zuno") {
                           loadContent('zuno_logo.jpg', 'Zuno');
+                          init_page(730,2,1.85,7900)
                       }
                       else if (type == "tatra") {
                           loadContent('tatra_banka_logo.png', 'Tatra');
