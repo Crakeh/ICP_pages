@@ -130,6 +130,8 @@ $(document).ready(function () {
         $('#prvy_variant').removeClass('hidden');
     } else if (variant == 'druhy') {
         $('#druhy_variant').removeClass('hidden');
+    } else if (variant == 'treti') {
+        $('#treti_variant').removeClass('hidden');
     }
 
     mortgages = parseMortgages();
@@ -170,28 +172,20 @@ $(document).ready(function () {
 
     $(document).on('scroll', movePorovnajBtn);
 
-    $('#hypoteka1').on('click', '.clickable', function (e) {
+    $('.hypoteka').on('click', '.clickable', function (e) {
         e.preventDefault();
-        window.location = '3.stranka.html#zuno';
-    });
-    $('#hypoteka2').on('click', '.clickable', function (e) {
-        e.preventDefault();
-        window.location = '3.stranka.html#tatra';
-    });
-    $('#hypoteka3').on('click', '.clickable', function (e) {
-        e.preventDefault();
-        window.location = '3.stranka.html#vub';
+        window.location = '3.stranka.html#' + variant + '_' + $(e.delegateTarget).data('banka');
     });
 
-    $(function () {
-        $('[data-toggle="popover"]').popover({
-            container: 'body',
-            content: 'Zoradené',
-            trigger: 'manual',
-            placement: 'top',
-            template: '<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>'
-        })
+
+    $('[data-toggle="popover"]').popover({
+        container: 'body',
+        content: 'Zoradené',
+        trigger: 'manual',
+        placement: 'top',
+        template: '<div class="popover" role="tooltip"><div class="arrow"></div><div class="popover-content"></div></div>'
     });
+
 
     $('.go-back').on('click', function (e) {
         history.go(-1);
@@ -205,9 +199,7 @@ $(document).ready(function () {
         $(this).find('.fa-chevron-right').toggleClass('fa-5x call-to-action');
     });
 
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip({
-            placement: 'bottom'
-        })
+    $('[data-toggle="tooltip"]').tooltip({
+        placement: 'bottom'
     });
 });
