@@ -140,13 +140,13 @@
   
           $('#dalej').on('click', function (e) {
               e.preventDefault();
-              var inputSuma = parseInt($('#inputsuma').val(), 10);
+              var inputFIX = parseInt($('#inputfix').val(), 10);
   
-              if ((inputSuma > 900) && (inputSuma < 150000)) {
+              if ((inputFIX > 0) && (inputFIX < 3)) {
                   window.location = 'stranka_2.html#prvy';
-              } else if ((inputSuma >= 150000) && (inputSuma < 300000)) {
+              } else if ((inputFIX >= 3) && (inputFIX < 4)) {
                   window.location = 'stranka_2.html#druhy';
-              } else if ((inputSuma >= 300000) && (inputSuma < 500000)) {
+              } else if ((inputFIX >= 4) && (inputFIX < 15)) {
                   window.location = 'stranka_2.html#treti';
               }
           });
