@@ -291,6 +291,7 @@
                           $(document).ready(function () {
                   
                               var type = window.location.hash.substr(1);
+                            	var type2 = type.split("_",1)
                               if (type == "zuno") {
                                   loadContent('zuno_logo.jpg', 'Zuno');
                                   init_page(730,2,1.85,7900)
@@ -366,7 +367,16 @@
                               });
                               $('#backk').on('click', function (e) {
                                   e.preventDefault();
+                                if (type2 == "prvy"){
                                   window.location = 'stranka_2.html#prvy';
+                                }
+                                else if (type2 == "druhy"){
+                                  window.location = 'stranka_2.html#druhy';
+                                }
+                                else if (type2 == "treti"){
+                                  window.location = 'stranka_2.html#druhy';
+                                }
+                                  
                               });
                               $('#homee').on('click', function (e) {
                                   e.preventDefault();
