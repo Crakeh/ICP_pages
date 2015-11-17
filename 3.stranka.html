@@ -287,6 +287,18 @@
                           spn4.text(prep);
                           
                         }
+      					function init_page2(splatka,fix,urok,prep){
+                          
+                          var spn1 = $('#mes_spl');
+                          var spn2 = $('#fix');
+                 
+                          var spn4 = $('#prep');
+                          spn1.text(splatka);
+                          spn2.text(fix);
+                          
+                          spn4.text(prep);
+                          
+                        }
                   
                           $(document).ready(function () {
                   
@@ -353,16 +365,19 @@
                               $('#zunoo').on('click', function (e) {
                                   e.preventDefault();
                                   loadContent('zuno_logo.jpg', 'Zuno');
+                                init_page2(630,2,15600)
                                   $('body').scrollTop(0);
                               });
                               $('#tatraa').on('click', function (e) {
                                   e.preventDefault();
                                   loadContent('tatra_banka_logo.png', 'Tatra');
+                                init_page2(700,3,12300)
                                   $('body').scrollTop(0);
                               });
                               $('#vubb').on('click', function (e) {
                                   e.preventDefault();
                                   loadContent('vub_banka_logo.jpg', 'VUB');
+                                init_page2(675,2,21900)
                                   $('body').scrollTop(0);
                               });
                               $('#backk').on('click', function (e) {
