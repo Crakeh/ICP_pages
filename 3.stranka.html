@@ -1,408 +1,437 @@
-<html><head>
+<html>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
     <link href="prva_stranka.css" rel="stylesheet" type="text/css">
-  </head><body>
-    <div class="section header" id="header">
-      <div class="container">
+</head>
+<body>
+<div class="section header" id="header">
+    <div class="container">
         <div class="row">
-          <div class="col-md-2">
-            <div class="enjoy-css">Hypotéky</div>
-            <script type="text/javascript" script-name="convergence" src="http://use.edgefonts.net/convergence.js"></script>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 text-color-white">
-            <h3 contenteditable="true">
-              <a href="#">
-                            <div class="col-md-3">
-                                <div class="row text-center">
-                                    <img id="banka-logo" class="img-responsive" src="#">
-                                </div>
-                                <div class="row">
-                                    <h3 class="text-center text-color-white">
-                                        <span id="banka-meno"></span> Banka
-                                        <br>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="col-md-8 text-color-white">
-                              <br>
-                              <br>  
-                              <br>  
-                              <div class="row ">
-                                    <div class="col-md-6 text-center" title="Splatka">
-                                        <p class="splatka"><span id="mes_spl">170</span> € / mes.</p>
-                                    </div>
-                                    <div class="col-md-6 fixacia text-center" title="Fixacia">
-                                        <p>
-                                            <i class="fa fa-hourglass"></i><span id="fix">2</span> roky</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 text-center urok" title="Urok">
-                                        <p>
-                                            <i class="fa fa-line-chart"></i><span id="urok">4,56</span>%</p>
-                                    </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie">
-                                        <p>
-                                            <i class="fa fa-plus"></i><span id="prep">15600</span> €</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-              <br>
-            </h3>
-            <p></p>
-            <div style="padding-top:150px;" class="txt">
-              <br>
-              <br>
-              <br>-účelový úver hypotekárneho typu, zabezpečený nehnuteľnosťou
-              <br>
-              <br>-prefinancovať môžete kúpu, stavbu alebo modernizáciu bytu, rodinného
-              domu, ale aj rekreačnej chaty
-              <br>
-              <br>-peniaze môžete čerpať ihneď po splnení podmienok, uvedených v úverovej
-              zmluve
-              <br>
-              <br>-podmienky si vyberáte podľa potrieb nielen pri poskytnutí úveru, ale
-              prispôsobíme ich vašej aktuálnej situácii aj počas splácania
-              <br>
-              <br>-Ročná percentná miera nákladov je 4.36%
-              <p></p>
-              <p></p>
+            <div class="col-md-2">
+                <div class="enjoy-css">Hypotéky</div>
+                <script type="text/javascript" script-name="convergence"
+                        src="http://use.edgefonts.net/convergence.js"></script>
             </div>
-          </div>
-          <div class="col-md-6" style="float:right">
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
             <div class="col-md-6 text-color-white">
-              <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <div class="col-sm-5">
-                    <label for="inputsuma" class="control-label">Suma (€)</label>
-                    <span class="badge" data-toggle="tooltip" title="Suma, ktorú si chcete požičať" data-placement="left">?</span>
-                  </div>
-                  <div class="col-sm-3">
-                    <input type="text" id="inputsuma" class="form-control" value="20000">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-5">
-                    <label for="inputdlzka" class="control-label">Dĺžka splatnosti(rokov)</label>
-                    <span class="badge" data-toggle="tooltip" title="Obdobie, počas ktorého chcete splácať" data-placement="left">?</span>
-                  </div>
-                  <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputdlzka" value="6">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-5">
-                    <label for="inputfix" class="control-label">Fixácia (rokov)</label>
-                    <span class="badge" data-toggle="tooltip" title="Počet rokov, počas ktorý ostane úrok nemenný" data-placement="left">?</span>
-                  </div>
-                  <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputfix" value="5">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-5">
-                    <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
-                    <span class="badge" data-toggle="tooltip" title="Výška Vášho mesačného príjmu" data-placement="left">?</span>
-                  </div>
-                  <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputmes" value="1400">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-5">
-                    <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu | bytu(€)</label>
-                    <sup>1</sup>
-                    <span class="badge" data-toggle="tooltip" title="Hodnota Vášho domu alebo bytu" data-placement="left">?</span>
-                  </div>
-                  <div class="col-sm-3">
-                    <input type="text" class="form-control" id="inputhod">
-                  </div>
-                </div>
-              </form>
-              <div class="row">
-                <label>
-                  <sup>1</sup>Nepovinné pole</label>
-                <div class="col-sm-2 col-sm-offset-10">
-                  <button type="button" class="btn btn-warning darkorange" id="prepocitajBtn" style="margin-left:11px;">Prepočitaj</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section text-color-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="container col-md-12">
-              <div class="row txt">
-                <h3>Plusy</h3>
-                <p>+ úver si namodelujete podľa svojich predstáv
-                  <br>+ ušetríte na úrokoch a poplatkoch
-                  <br>+ mimoriadne splátky až do výšky 20% ročne bez poplatku</p>
-              </div>
-              <div class="row txt">
-                <h3>Minusy</h3>
-                <p>- nutnosť dokladanie viacerých dokladov ktoré niesú ani potrebné
-                  <br>- zdlhavejsi proces</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <button type="submit" class="btn btn-warning darkorange" style="padding:20px; margin-top:160px">Vyplniť formular</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <h2 class="white-text ">Podobné hypotéky</h2>
-        <div class="row" style="text-align:center; color:white;">
-          <div class="col-md-4 clickable" id="zunoo">
-            <img src="zuno_logo.jpg" style="height:130px; width:auto; margin:10px;">
-            <h2>Zuno banka</h2>
-            <p></p>
-            <h3>630 € / mesiac
-              <br>2 roky
-              <br>15 600€</h3>
-            <p></p>
-          </div>
-          <div class="col-md-4 clickable" id="tatraa">
-            <img src="tatra_banka_logo.png" style="height:130px; width:auto; margin:10px;">
-            <h2>Tatra banka</h2>
-            <p></p>
-            <h3>700 € / mesiac
-              <br>3 roky
-              <br>12 300€</h3>
-            <p></p>
-          </div>
-          <div class="col-md-4 clickable" id="vubb">
-            <img src="vub_banka_logo.jpg" style="height:130px; width:auto; margin:10px;">
-            <h2>Vub Banka</h2>
-            <p></p>
-            <h3>675 € / mesiac
-              <br>2 roky
-              <br>21 900€</h3>
-            <p></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="col-md-6">
-              <div class="col-sm-5 col-sm-offset-0" id="backk">
-                <button type="submit" class="btn btn-warning darkorange">Späť na predošlú
-                  <br>stránku</button>
-              </div>
-            </div>
-            <div class="col-md-6" id="homee">
-              <div class="col-sm-4 col-sm-offset-0">
-                <button type="submit" class="btn btn-warning darkorange">Domovská
-                  <br>stránka</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <div class="row">
-              <div class="col-sm-4 col-sm-offset-8"></div>
-              <div class="hore">
-                <a href="#" class=""><i class="call-to-action fa fa-5x fa-long-arrow-up"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="text/javascript">
-      //"prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep')"
-                          //textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4
-                          function parseDec(n) {
-                              return (parseInt(n, 10));
-                          }
-                          function prepocitaj(textbox1, textbox2, textbox3, textbox4, textbox5, span1, span2, span3, span4) {
-                              var txtb1 = $('#' + textbox1).val();
-                              var txtb2 = $('#' + textbox2).val();
-                              var txtb3 = $('#' + textbox3).val();
-                              var txtb4 = $('#' + textbox4).val();
-                              var txtb5 = $('#' + textbox5).val();
-                              var spn1 = $('#' + span1);
-                              var spn2 = $('#' + span2);
-                              var spn3 = $('#' + span3);
-                              var spn4 = $('#' + span4);
-                              //document.getElementById(span2).textContent= document.getElementById(textbox3).value ;
-                              if (!(txtb3 && txtb2 && txtb1 && txtb4)) {
-                                  return confirm('Neboli vyplnené všetky povinné polia');
-                              }
-                              if (!(parseDec(txtb1) && parseDec(txtb2) && parseDec(txtb3) && parseDec(txtb4))) {
-                                  return confirm('Zadane hodnoty maju byt cisla!');
-                              }
-                              if (txtb3 > parseInt(txtb2, 10)) {
-                                  return confirm('Dĺžka fixacie nemôže byť väčšia ako dĺžka splátky.');
-                              }
-                              spn2 = txtb3;
-                              // HU*(((1+((0.01*i)/na))**(n*na))*((0.01*i)/na))/(((1+((0.01*i)/na))**(n*na))-1) kde je  HU - výška úveru, n – počet rokov, na – počet splátok do roka, i – úroková sadzba
-                              var i = parseFloat(spn3.text());
-                              var na = 12;
-                              var n = parseDec(txtb2);
-                              var MU = parseDec(txtb1);
-                              spn1.text(Math.floor(MU * ((Math.pow((1 + ((0.01 * i) / na)), (n * na))) * ((0.01 * i) / na)) / ((Math.pow((1 + ((0.01 * i) / na)), (n * na))) - 1)));
-                              spn4.text(Math.floor((parseFloat(spn1.text()) * n * na) - txtb1));
-                              if (parseDec(spn1.text()) > parseDec(txtb4)) {
-                                  return confirm('Pozor výška splátky väčšia ako mesačný plat!');
-                              }
-                          }
-                  
-                          function loadContent(img_src, bank_name) {
-                              var img = $('#banka-logo');
-                              var meno = $('#banka-meno');
-                              img.attr('src', img_src);
-                              meno.text(bank_name);
-                          }
-              // argumenty - mesacna splatka , fixacia v rokoch , utok v percentach, preplatok
-              			function init_page(splatka,fix,urok,prep){
-                          
-                          var spn1 = $('#mes_spl');
-                          var spn2 = $('#fix');
-                          var spn3 = $('#urok');
-                          var spn4 = $('#prep');
-                          spn1.text(splatka);
-                          spn2.text(fix);
-                          spn3.text(urok);
-                          spn4.text(prep);
-                          
-                        }
-      					function init_page2(splatka,fix,urok,prep){
-                          
-                          var spn1 = $('#mes_spl');
-                          var spn2 = $('#fix');
-                 
-                          var spn4 = $('#prep');
-                          spn1.text(splatka);
-                          spn2.text(fix);
-                          
-                          spn4.text(prep);
-                          
-                        }
-                  
-                          $(document).ready(function () {
-                  
-                              var type = window.location.hash.substr(1);
-                            	var type2 = type.split("_",1)
-                              if (type == "zuno") {
-                                  loadContent('zuno_logo.jpg', 'Zuno');
-                                  init_page(730,2,1.85,7900)
-                              }
-                              else if (type == "prvy_zuno") {
-                                  loadContent('zuno_logo.jpg', 'Zuno');
-                                  init_page(730,2,1.85,7900)
-                              }
-                               else if (type == "druhy_zuno") {
-                                  loadContent('zuno_logo.jpg', 'Zuno');
-                                  init_page(643,3,2.00,16830)
-                              }
-                               else if (type == "treti_zuno") {
-                                  loadContent('zuno_logo.jpg', 'Zuno');
-                                  init_page(730,2,1.85,7900)
-                              }
-                              else if (type == "prvy_tatra") {
-                                  loadContent('tatra_banka_logo.png', 'Tatra');
-                                  init_page(736,2,2.05,8300)
-                              }
-                            else if (type == "druhy_tatra") {
-                                  loadContent('tatra_banka_logo.png', 'Tatra');
-                                  init_page(629,3,1.69,14100)
-                              }
-                            else if (type == "treti_tatra") {
-                                  loadContent('tatra_banka_logo.png', 'Tatra');
-                                  init_page(334,5,2.04,29432)
-                              }
-                              else if (type == "prvy_vub") {
-                                  loadContent('vub_banka_logo.jpg', 'VUB');
-                                  init_page(870,2,2.58,15600)
-                              }
-                              else if (type == "druhy_vub") {
-                                  loadContent('vub_banka_logo.jpg', 'VUB');
-                                  init_page(636,3,1.85,14600)
-                              }
-                            else if (type == "treti_vub") {
-                                  loadContent('vub_banka_logo.jpg', 'VUB');
-                                  init_page(336,5,2.09,31325)
-                              }
-                              else if (type == "tatra") {
-                                  loadContent('tatra_banka_logo.png', 'Tatra');
-                              }
-                              else if (type == "vub") {
-                                  loadContent('vub_banka_logo.jpg', 'VUB');
-                              }
-                            else if (type == "druhy_mbank"){
-                             	loadContent('mbank_logo.jpg','mBank')
-                                init_page(622,3,1.54,12058)
-                            }
-                             else if (type == "treti_mbank"){
-                             	loadContent('mbank_logo.jpg','mBank')
-                                init_page(327,5,1.89,28792)
-                            }
-                  
-                              $('#prepocitajBtn').on('click', function (e) {
-                                  prepocitaj('inputsuma', 'inputdlzka', 'inputfix', 'inputmes', 'inputhod', 'mes_spl', 'fix', 'urok', 'prep');
-                              });
-                              $('#zunoo').on('click', function (e) {
-                                  e.preventDefault();
-                                  loadContent('zuno_logo.jpg', 'Zuno');
-                                init_page2(630,2,15600)
-                                  $('body').scrollTop(0);
-                              });
-                              $('#tatraa').on('click', function (e) {
-                                  e.preventDefault();
-                                  loadContent('tatra_banka_logo.png', 'Tatra');
-                                init_page2(700,3,12300)
-                                  $('body').scrollTop(0);
-                              });
-                              $('#vubb').on('click', function (e) {
-                                  e.preventDefault();
-                                  loadContent('vub_banka_logo.jpg', 'VUB');
-                                init_page2(675,2,21900)
-                                  $('body').scrollTop(0);
-                              });
-                              $('#backk').on('click', function (e) {
-                                  e.preventDefault();
-                                if (type2 == "prvy"){
-                                  window.location = 'stranka_2.html#prvy';
-                                }
-                                else if (type2 == "druhy"){
-                                  window.location = 'stranka_2.html#druhy';
-                                }
-                                else if (type2 == "treti"){
-                                  window.location = 'stranka_2.html#druhy';
-                                }
-                                  
-                              });
-                              $('#homee').on('click', function (e) {
-                                  e.preventDefault();
-                                  window.location = 'prva_stranka.html';
-                              });
-        					  
-        					  $(function () {
-        					    $('[data-toggle="tooltip"]').tooltip()
-                              });
-                          });
-    </script>
-  
+                <h3 contenteditable="true">
+                    <a href="#">
+                        <div class="col-md-3">
+                            <div class="row text-center">
+                                <img id="banka-logo" class="img-responsive" src="#">
+                            </div>
+                            <div class="row">
+                                <h3 class="text-center text-color-white">
+                                    <span id="banka-meno"></span> Banka
+                                    <br>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-md-8 text-color-white">
+                            <br>
+                            <br>
+                            <br>
 
-</body></html>
+                            <div class="row ">
+                                <div class="col-md-6 text-center" title="Splatka">
+                                    <p class="splatka"><span id="mes_spl">170</span> € / mes.</p>
+                                </div>
+                                <div class="col-md-6 fixacia text-center" title="Fixacia">
+                                    <p>
+                                        <i class="fa fa-hourglass"></i><span id="fix">2</span> roky</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 text-center urok" title="Urok">
+                                    <p>
+                                        <i class="fa fa-line-chart"></i><span id="urok">4,56</span>%</p>
+                                </div>
+                                <div class="col-md-6 preplatenie text-center" title="Preplatenie">
+                                    <p>
+                                        <i class="fa fa-plus"></i><span id="prep">15600</span> €</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <br>
+                </h3>
+                <p></p>
+
+                <div style="padding-top:150px;" class="txt">
+                    <br>
+                    <br>
+                    <br>-účelový úver hypotekárneho typu, zabezpečený nehnuteľnosťou
+                    <br>
+                    <br>-prefinancovať môžete kúpu, stavbu alebo modernizáciu bytu, rodinného
+                    domu, ale aj rekreačnej chaty
+                    <br>
+                    <br>-peniaze môžete čerpať ihneď po splnení podmienok, uvedených v úverovej
+                    zmluve
+                    <br>
+                    <br>-podmienky si vyberáte podľa potrieb nielen pri poskytnutí úveru, ale
+                    prispôsobíme ich vašej aktuálnej situácii aj počas splácania
+                    <br>
+                    <br>-Ročná percentná miera nákladov je 4.36%
+                    <p></p>
+
+                    <p></p>
+                </div>
+            </div>
+            <div class="col-md-6" style="float:right">
+                <div class="col-md-6 text-color-white">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <label for="inputsuma" class="control-label">Suma (€)</label>
+                                <span class="badge" data-toggle="tooltip" title="Suma, ktorú si chcete požičať"
+                                      data-placement="left">?</span>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" id="inputsuma" class="form-control" value="20000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <label for="inputdlzka" class="control-label">Dĺžka splatnosti(rokov)</label>
+                                <span class="badge" data-toggle="tooltip" title="Obdobie, počas ktorého chcete splácať"
+                                      data-placement="left">?</span>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="inputdlzka" value="6">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <label for="inputfix" class="control-label">Fixácia (rokov)</label>
+                                <span class="badge" data-toggle="tooltip"
+                                      title="Počet rokov, počas ktorý ostane úrok nemenný"
+                                      data-placement="left">?</span>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="inputfix" value="5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <label for="inputmes" class="control-label">Mesačný príjem (€)</label>
+                                <span class="badge" data-toggle="tooltip" title="Výška Vášho mesačného príjmu"
+                                      data-placement="left">?</span>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="inputmes" value="1400">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <label for="inputhod" class="control-label" contenteditable="true">Hodnota domu |
+                                    bytu(€)</label>
+                                <sup>1</sup>
+                                <span class="badge" data-toggle="tooltip" title="Hodnota Vášho domu alebo bytu"
+                                      data-placement="left">?</span>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="inputhod">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <label>
+                            <sup>1</sup>Nepovinné pole</label>
+
+                        <div class="col-sm-2 col-sm-offset-10">
+                            <button type="button" class="btn btn-warning darkorange" id="prepocitajBtn"
+                                    style="margin-left:11px;">Prepočitaj
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section text-color-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container col-md-12">
+                    <div class="row txt">
+                        <h3>Plusy</h3>
+
+                        <p>+ úver si namodelujete podľa svojich predstáv
+                            <br>+ ušetríte na úrokoch a poplatkoch
+                            <br>+ mimoriadne splátky až do výšky 20% ročne bez poplatku</p>
+                    </div>
+                    <div class="row txt">
+                        <h3>Minusy</h3>
+
+                        <p>- nutnosť dokladanie viacerých dokladov ktoré niesú ani potrebné
+                            <br>- zdlhavejsi proces</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-warning darkorange" style="padding:20px; margin-top:160px">Vyplniť
+                    formular
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <h2 class="white-text ">Podobné hypotéky</h2>
+
+        <div class="row" style="text-align:center; color:white;">
+            <div class="col-md-4 clickable" id="zunoo">
+                <img src="zuno_logo.jpg" style="height:130px; width:auto; margin:10px;">
+
+                <h2>Zuno banka</h2>
+
+                <p></p>
+
+                <h3>630 € / mesiac
+                    <br>2 roky
+                    <br>15 600€</h3>
+
+                <p></p>
+            </div>
+            <div class="col-md-4 clickable" id="tatraa">
+                <img src="tatra_banka_logo.png" style="height:130px; width:auto; margin:10px;">
+
+                <h2>Tatra banka</h2>
+
+                <p></p>
+
+                <h3>700 € / mesiac
+                    <br>3 roky
+                    <br>12 300€</h3>
+
+                <p></p>
+            </div>
+            <div class="col-md-4 clickable" id="vubb">
+                <img src="vub_banka_logo.jpg" style="height:130px; width:auto; margin:10px;">
+
+                <h2>Vub Banka</h2>
+
+                <p></p>
+
+                <h3>675 € / mesiac
+                    <br>2 roky
+                    <br>21 900€</h3>
+
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="col-md-6">
+                    <div class="col-sm-5 col-sm-offset-0" id="backk">
+                        <button type="submit" class="btn btn-warning darkorange">Späť na predošlú
+                            <br>stránku
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6" id="homee">
+                    <div class="col-sm-4 col-sm-offset-0">
+                        <button type="submit" class="btn btn-warning darkorange">Domovská
+                            <br>stránka
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-8"></div>
+                    <div class="hore">
+                        <a href="#" class=""><i class="call-to-action fa fa-5x fa-long-arrow-up"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //"prepocitaj('inputsuma','inputdlzka','inputfix','inputmes','inputhod','mes_spl','fix','urok','prep')"
+    //textbox1,textbox2,textbox3,textbox4,textbox5,span1,span2,span3,span4
+    function parseDec(n) {
+        return (parseInt(n, 10));
+    }
+    function prepocitaj(textbox1, textbox2, textbox3, textbox4, textbox5, span1, span2, span3, span4) {
+        var txtb1 = $('#' + textbox1).val();
+        var txtb2 = $('#' + textbox2).val();
+        var txtb3 = $('#' + textbox3).val();
+        var txtb4 = $('#' + textbox4).val();
+        var txtb5 = $('#' + textbox5).val();
+        var spn1 = $('#' + span1);
+        var spn2 = $('#' + span2);
+        var spn3 = $('#' + span3);
+        var spn4 = $('#' + span4);
+        //document.getElementById(span2).textContent= document.getElementById(textbox3).value ;
+        if (!(txtb3 && txtb2 && txtb1 && txtb4)) {
+            return confirm('Neboli vyplnené všetky povinné polia');
+        }
+        if (!(parseDec(txtb1) && parseDec(txtb2) && parseDec(txtb3) && parseDec(txtb4))) {
+            return confirm('Zadane hodnoty maju byt cisla!');
+        }
+        if (txtb3 > parseInt(txtb2, 10)) {
+            return confirm('Dĺžka fixacie nemôže byť väčšia ako dĺžka splátky.');
+        }
+        spn2 = txtb3;
+        // HU*(((1+((0.01*i)/na))**(n*na))*((0.01*i)/na))/(((1+((0.01*i)/na))**(n*na))-1) kde je  HU - výška úveru, n – počet rokov, na – počet splátok do roka, i – úroková sadzba
+        var i = parseFloat(spn3.text());
+        var na = 12;
+        var n = parseDec(txtb2);
+        var MU = parseDec(txtb1);
+        spn1.text(Math.floor(MU * ((Math.pow((1 + ((0.01 * i) / na)), (n * na))) * ((0.01 * i) / na)) / ((Math.pow((1 + ((0.01 * i) / na)), (n * na))) - 1)));
+        spn4.text(Math.floor((parseFloat(spn1.text()) * n * na) - txtb1));
+        if (parseDec(spn1.text()) > parseDec(txtb4)) {
+            return confirm('Pozor výška splátky väčšia ako mesačný plat!');
+        }
+    }
+
+    function loadContent(img_src, bank_name) {
+        var img = $('#banka-logo');
+        var meno = $('#banka-meno');
+        img.attr('src', img_src);
+        meno.text(bank_name);
+    }
+    // argumenty - mesacna splatka , fixacia v rokoch , utok v percentach, preplatok
+    function init_page(splatka, fix, urok, prep) {
+
+        var spn1 = $('#mes_spl');
+        var spn2 = $('#fix');
+        var spn3 = $('#urok');
+        var spn4 = $('#prep');
+        spn1.text(splatka);
+        spn2.text(fix);
+        spn3.text(urok);
+        spn4.text(prep);
+
+    }
+    function init_page2(splatka, fix, urok, prep) {
+
+        var spn1 = $('#mes_spl');
+        var spn2 = $('#fix');
+
+        var spn4 = $('#prep');
+        spn1.text(splatka);
+        spn2.text(fix);
+
+        spn4.text(prep);
+
+    }
+
+    $(document).ready(function () {
+
+        var type = window.location.hash.substr(1);
+        var type2 = type.split("_", 1);
+        if (type == "zuno") {
+            loadContent('zuno_logo.jpg', 'Zuno');
+            init_page(730, 2, 1.85, 7900)
+        }
+        else if (type == "prvy_zuno") {
+            loadContent('zuno_logo.jpg', 'Zuno');
+            init_page(730, 2, 1.85, 7900)
+        }
+        else if (type == "druhy_zuno") {
+            loadContent('zuno_logo.jpg', 'Zuno');
+            init_page(643, 3, 2.00, 16830)
+        }
+        else if (type == "treti_zuno") {
+            loadContent('zuno_logo.jpg', 'Zuno');
+            init_page(730, 2, 1.85, 7900)
+        }
+        else if (type == "prvy_tatra") {
+            loadContent('tatra_banka_logo.png', 'Tatra');
+            init_page(736, 2, 2.05, 8300)
+        }
+        else if (type == "druhy_tatra") {
+            loadContent('tatra_banka_logo.png', 'Tatra');
+            init_page(629, 3, 1.69, 14100)
+        }
+        else if (type == "treti_tatra") {
+            loadContent('tatra_banka_logo.png', 'Tatra');
+            init_page(334, 5, 2.04, 29432)
+        }
+        else if (type == "prvy_vub") {
+            loadContent('vub_banka_logo.jpg', 'VUB');
+            init_page(870, 2, 2.58, 15600)
+        }
+        else if (type == "druhy_vub") {
+            loadContent('vub_banka_logo.jpg', 'VUB');
+            init_page(636, 3, 1.85, 14600)
+        }
+        else if (type == "treti_vub") {
+            loadContent('vub_banka_logo.jpg', 'VUB');
+            init_page(336, 5, 2.09, 31325)
+        }
+        else if (type == "tatra") {
+            loadContent('tatra_banka_logo.png', 'Tatra');
+        }
+        else if (type == "vub") {
+            loadContent('vub_banka_logo.jpg', 'VUB');
+        }
+        else if (type == "druhy_mbank") {
+            loadContent('mbank_logo.jpg', 'mBank');
+            init_page(622, 3, 1.54, 12058)
+        }
+        else if (type == "treti_mbank") {
+            loadContent('mbank_logo.jpg', 'mBank');
+            init_page(327, 5, 1.89, 28792)
+        }
+
+        $('#prepocitajBtn').on('click', function (e) {
+            prepocitaj('inputsuma', 'inputdlzka', 'inputfix', 'inputmes', 'inputhod', 'mes_spl', 'fix', 'urok', 'prep');
+        });
+        $('#zunoo').on('click', function (e) {
+            e.preventDefault();
+            loadContent('zuno_logo.jpg', 'Zuno');
+            init_page2(630, 2, 15600);
+            $('body').scrollTop(0);
+        });
+        $('#tatraa').on('click', function (e) {
+            e.preventDefault();
+            loadContent('tatra_banka_logo.png', 'Tatra');
+            init_page2(700, 3, 12300);
+            $('body').scrollTop(0);
+        });
+        $('#vubb').on('click', function (e) {
+            e.preventDefault();
+            loadContent('vub_banka_logo.jpg', 'VUB');
+            init_page2(675, 2, 21900);
+            $('body').scrollTop(0);
+        });
+        $('#backk').on('click', function (e) {
+            e.preventDefault();
+            window.location = 'stranka_2.html#' + type2;
+
+        });
+        $('#homee').on('click', function (e) {
+            e.preventDefault();
+            window.location = 'prva_stranka.html';
+        });
+
+
+        $('[data-toggle="tooltip"]').tooltip()
+
+    });
+</script>
+
+
+</body>
+</html>

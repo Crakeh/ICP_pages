@@ -126,13 +126,7 @@ function filterCheckedMortgages(mortgages) {
 $(document).ready(function () {
 
     variant = window.location.href.split('#')[1];
-    if (variant == 'prvy') {
-        $('#prvy_variant').removeClass('hidden');
-    } else if (variant == 'druhy') {
-        $('#druhy_variant').removeClass('hidden');
-    } else if (variant == 'treti') {
-        $('#treti_variant').removeClass('hidden');
-    }
+    $('#' + variant + '_variant').removeClass('hidden');
 
     mortgages = parseMortgages();
 
