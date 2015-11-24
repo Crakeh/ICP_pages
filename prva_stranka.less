@@ -810,6 +810,23 @@ monospace;
   background: @call-to-action;
 }
 
+.legend-and-zoradenie {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  height: inherit;
+  & > .legend {
+    font-size: 2em;
+    & > span {
+      margin-left: .2em;
+    }
+  }
+  & > .zoradenie {
+    font-size: 1.5em;
+  }
+}
+
 .clickable {
   cursor: pointer;
 }

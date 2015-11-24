@@ -6837,6 +6837,22 @@ body {
 .darkerorange {
   background: #d9853b;
 }
+.legend-and-zoradenie {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  height: inherit;
+}
+.legend-and-zoradenie > .legend {
+  font-size: 2em;
+}
+.legend-and-zoradenie > .legend > span {
+  margin-left: .2em;
+}
+.legend-and-zoradenie > .zoradenie {
+  font-size: 1.5em;
+}
 .clickable {
   cursor: pointer;
 }
