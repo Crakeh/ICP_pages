@@ -182,7 +182,7 @@
             </div>
           </div>
           <div class="row txt" style="text-align:center; margin-top:40px; ">
-            <button type="submit" class="btn btn-warning darkorange">Požiadať o hypotéku</button>
+            <button type="submit" class="btn btn-warning darkorange" id="formular">Požiadať o hypotéku</button>
           </div>
         </div>
       </div>
@@ -220,7 +220,8 @@
               <h2>Vub Banka</h2>
               <p></p>
               <h3>675 € / mesiac
-                <br><i class="fa fa-hourglass"></i>2 roky
+                <br>
+                <i class="fa fa-hourglass"></i>2 roky
                 <br>
                 <i class="fa fa-plus"></i>
                 <span id="prep">21 900€</span>
@@ -391,6 +392,9 @@
         
                                   $('#prepocitajBtn').on('click', function (e) {
                                       prepocitaj('inputsuma', 'inputdlzka', 'inputfix', 'inputmes', 'inputhod', 'mes_spl', 'fix', 'urok', 'prep');
+                                  });
+                                  $('#formular').on('click',function (e) {
+                                  	  confirm('Scenar bol úspešne ukončený!');
                                   });
                                   $('#zunoo').on('click', function (e) {
                                       e.preventDefault();
