@@ -1,5 +1,4 @@
-<html>
-<head>
+<html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -8,28 +7,27 @@
     <script type="text/javascript" src="stranka_2.js" charset="windows-1250"></script>
     <link href="stranka_2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-</head>
-<body>
+</head><body>
 <div id="navbar"></div>
 <div class="section my-header" id="header">
     <div class="container">
         <div class="row header-row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-12">
                 <div class="enjoy-css">Hypotéky</div>
-                <script type="text/javascript" script-name="convergence"
-                        src="http://use.edgefonts.net/convergence.js"></script>
+                <script type="text/javascript" script-name="convergence" src="http://use.edgefonts.net/convergence.js"></script>
             </div>
-            <div class="col-md-6 legend-and-zoradenie">
-                <div class="legend text-center">Legenda:
-                            <span>
-                                <i class="fa fa-hourglass"></i>Fixácia</span>
-                            <span>
-                                <i class="fa fa-line-chart"></i>Úrok</span>
-                            <span>
-                                <i class="fa fa-plus"></i>Preplatenie</span>
+            <div class="col-md-6 legend-and-zoradenie visible-lg visible-md">
+                <div class="legend text-center">
+                    <span class="visible-md-inline visible-lg-inline">Legenda:</span>
+              <span>
+                <i class="fa fa-hourglass"></i>Fixácia</span>
+              <span>
+                <i class="fa fa-line-chart"></i>Úrok</span>
+              <span>
+                <i class="fa fa-plus"></i>Preplatenie</span>
                 </div>
                 <div class="text-center zoradenie">
-                    <label>Zoradiť podľa</label>
+                    <label class="visible-md-inline visible-lg-inline">Zoradiť podľa</label>
 
                     <div class="btn-group">
                         <button class="btn btn-default " type="button" data-sort="urok" data-toggle="popover">Úrok
@@ -52,9 +50,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 porovnaj-btn-container">
-                <a class="btn btn-lg porovnaj-btn call-to-action-btn" id="porovnajBtn" data-toggle="modal"
-                   data-target="#porovnajDialog">Porovnaj <i class="fa fa-balance-scale"></i></a>
+            <div class="col-md-2 col-xs-12 porovnaj-btn-container">
+                <a class="btn btn-lg btn-block porovnaj-btn call-to-action-btn" id="porovnajBtn" data-toggle="modal" data-target="#porovnajDialog">Porovnaj <i class="fa fa-balance-scale"></i></a>
             </div>
         </div>
     </div>
@@ -65,154 +62,127 @@
             <div id="prvy_variant" class="hidden">
                 <div class="col-md-12 hypoteka" data-banka="zuno" id="hypoteka1">
                     <div class="row">
-                        <div class="clickable">
-                            <div class="col-md-2">
-                                <div class="row text-center">
-                                    <div class="col-md-offset-2 col-md-8">
-                                        <img src="zuno_logo.jpg" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <h3 class="text-center banka">Zuno bank a.g.</h3>
-                                </div>
-                                <div class="row text-center">
-                                    <i class="fa fa-3x fa-chevron-right"></i>
+                        <div class="col-xs-4 col-md-2 left-column">
+                            <div class="row text-center">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <img src="zuno_logo.jpg" class="img-responsive">
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <div class="col-md-6 text-center splatka" title="Splátka" data-toggle="tooltip">
-                                        <span class="hodnota">730</span>€ / mes.
-                                    </div>
-                                    <div class="col-md-6 fixacia text-center" title="Fixácia" data-toggle="tooltip">
-                                        <i class="fa fa-hourglass"></i>
-                                        <span class="hodnota">2</span>roky
-                                    </div>
+                            <div class="row">
+                                <h3 class="text-center banka">Zuno bank a.g.</h3>
+                            </div>
+                            <div class="row text-center">
+                                <i class="fa fa-balance-scale check-scale"></i>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-6 splatka" title="Splátka" data-toggle="tooltip">
+                                    <span class="hodnota">730</span> € / mes.
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 text-center urok" title="Úrok" data-toggle="tooltip">
-                                        <i class="fa fa-line-chart"></i>
-                                        <span class="hodnota">1,85</span>%
-                                    </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
-                                        <i class="fa fa-plus"></i>
-                                        <span class="hodnota">7 900</span>€
-                                    </div>
+                                <div class="col-md-6 fixacia" title="Fixácia" data-toggle="tooltip">
+                                    <i class="fa fa-hourglass"></i>
+                                    <span class="hodnota">2</span> roky
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 urok" title="Úrok" data-toggle="tooltip">
+                                    <i class="fa fa-line-chart"></i>
+                                    <span class="hodnota">1,85</span>%
+                                </div>
+                                <div class="col-md-6 preplatenie" title="Preplatenie" data-toggle="tooltip">
+                                    <i class="fa fa-plus"></i>
+                                    <span class="hodnota">7 900</span> €
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
-                            <div class="row">
-                                <p class="hodnotenie-cislo text-right">8/10</p></div>
-                            <div class="row text-center">
-                                <i class="fa fa-2x fa-balance-scale"></i>
-                                <input type="checkbox">
-                            </div>
+                        <div class="col-xs-2 next-arrow clickable">
+                            <i class="fa fa-3x fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 hypoteka" data-banka="tatra" id="hypoteka2">
                     <div class="row">
-                        <div class="clickable">
-                            <div class="col-md-2">
-                                <div class="row text-center">
-                                    <div class="col-md-offset-2 col-md-8">
-                                        <img src="tatra_banka_logo.png" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <h3 class="text-center banka">Tatra banka</h3>
-                                </div>
-                                <div class="row text-center">
-                                    <i class="fa fa-3x fa-chevron-right"></i>
+                        <div class="col-xs-4 col-md-2">
+                            <div class="row text-center">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <img src="tatra_banka_logo.png" class="img-responsive">
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <div class="col-md-6 text-center splatka" title="Splátka" data-toggle="tooltip">
-                                        <span class="hodnota">736</span>€ / mes.
-                                    </div>
-                                    <div class="col-md-6 fixacia text-center" title="Fixácia" data-toggle="tooltip">
-                                        <i class="fa fa-hourglass"></i>
-                                        <span class="hodnota">2</span>roky
-                                    </div>
+                            <div class="row">
+                                <h3 class="text-center banka">Tatra banka</h3>
+                            </div>
+                            <div class="row text-center">
+                                <i class="fa fa-balance-scale check-scale"></i>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-6 splatka" title="Splátka" data-toggle="tooltip">
+                                    <span class="hodnota">736</span> € / mes.
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 text-center urok" title="Úrok" data-toggle="tooltip">
-                                        <i class="fa fa-line-chart"></i>
-                                        <span class="hodnota">2,05</span>%
-                                    </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
-                                        <i class="fa fa-plus"></i>
-                                        <span class="hodnota">8 300</span>€
-                                    </div>
+                                <div class="col-md-6 fixacia" title="Fixácia" data-toggle="tooltip">
+                                    <i class="fa fa-hourglass"></i>
+                                    <span class="hodnota">2</span> roky
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 urok" title="Úrok" data-toggle="tooltip">
+                                    <i class="fa fa-line-chart"></i>
+                                    <span class="hodnota">2,05</span>%
+                                </div>
+                                <div class="col-md-6 preplatenie" title="Preplatenie" data-toggle="tooltip">
+                                    <i class="fa fa-plus"></i>
+                                    <span class="hodnota">8 300</span> €
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
-                            <div class="row">
-                                <p class="hodnotenie-cislo text-right">7,7/10</p></div>
-                            <div class="row text-center">
-                                <i class="fa fa-2x fa-balance-scale"></i>
-                                <input type="checkbox">
-                            </div>
+                        <div class="col-xs-2 next-arrow clickable">
+                            <i class="fa fa-3x fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 hypoteka" data-banka="vub" id="hypoteka3">
                     <div class="row">
-                        <div class="clickable">
-                            <div class="col-md-2">
-                                <div class="row text-center">
-                                    <div class="col-md-offset-2 col-md-8">
-                                        <img src="vub_banka_logo.jpg" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <h3 class="text-center banka">VUB Banka</h3>
-                                </div>
-                                <div class="row text-center">
-                                    <i class="fa fa-3x fa-chevron-right"></i>
+                        <div class="col-xs-4 col-md-2">
+                            <div class="row text-center">
+                                <div class="col-md-offset-2 col-md-8">
+                                    <img src="vub_banka_logo.jpg" class="img-responsive">
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <div class="col-md-6 text-center splatka" title="Splátka" data-toggle="tooltip">
-                                        <span class="hodnota">870</span>€ / mes.
-                                    </div>
-                                    <div class="col-md-6 fixacia text-center" title="Fixácia" data-toggle="tooltip">
-                                        <i class="fa fa-hourglass"></i>
-                                        <span class="hodnota">2</span>roky
-                                    </div>
+                            <div class="row">
+                                <h3 class="text-center banka">VUB Banka</h3>
+                            </div>
+                            <div class="row text-center">
+                                <i class="fa fa-balance-scale check-scale"></i>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xs-6">
+                            <div class="row">
+                                <div class="col-md-6 splatka" title="Splátka" data-toggle="tooltip">
+                                    <span class="hodnota">870</span> € / mes.
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6 text-center urok" title="Úrok" data-toggle="tooltip">
-                                        <i class="fa fa-line-chart"></i>
-                                        <span class="hodnota">2,58</span>%
-                                    </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
-                                        <i class="fa fa-plus"></i>
-                                        <span class="hodnota">15 600</span>€
-                                    </div>
+                                <div class="col-md-6 fixacia" title="Fixácia" data-toggle="tooltip">
+                                    <i class="fa fa-hourglass"></i>
+                                    <span class="hodnota">2</span> roky
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 urok" title="Úrok" data-toggle="tooltip">
+                                    <i class="fa fa-line-chart"></i>
+                                    <span class="hodnota">2,58</span>%
+                                </div>
+                                <div class="col-md-6 preplatenie" title="Preplatenie" data-toggle="tooltip">
+                                    <i class="fa fa-plus"></i>
+                                    <span class="hodnota">15 600</span> €
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
-                            <div class="row">
-                                <p class="hodnotenie-cislo text-right">7,2/10</p></div>
-                            <div class="row text-center">
-                                <i class="fa fa-2x fa-balance-scale"></i>
-                                <input type="checkbox">
-                            </div>
+                        <div class="col-xs-2 next-arrow clickable">
+                            <i class="fa fa-3x fa-chevron-right"></i>
                         </div>
                     </div>
                 </div>
@@ -249,8 +219,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">1,54</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">12 058</span>€
                                     </div>
@@ -259,9 +228,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">8,4/10</p></div>
+                                <p class="hodnotenie-cislo text-right">8,4/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -300,8 +271,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">1,69</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">14 100</span>€
                                     </div>
@@ -310,9 +280,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">7,7/10</p></div>
+                                <p class="hodnotenie-cislo text-right">7,7/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -351,8 +323,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">1,85</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">14 600</span>€
                                     </div>
@@ -361,9 +332,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">7,2/10</p></div>
+                                <p class="hodnotenie-cislo text-right">7,2/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -402,8 +375,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">2,00</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">16 830</span>€
                                     </div>
@@ -412,9 +384,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">6,5/10</p></div>
+                                <p class="hodnotenie-cislo text-right">6,5/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -455,8 +429,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">1,89</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">28 792</span>€
                                     </div>
@@ -465,9 +438,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">8,4/10</p></div>
+                                <p class="hodnotenie-cislo text-right">8,4/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -506,8 +481,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">2,04</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">29 432</span>€
                                     </div>
@@ -516,9 +490,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">7,7/10</p></div>
+                                <p class="hodnotenie-cislo text-right">7,7/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -557,8 +533,7 @@
                                         <i class="fa fa-line-chart"></i>
                                         <span class="hodnota">2,09</span>%
                                     </div>
-                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie"
-                                         data-toggle="tooltip">
+                                    <div class="col-md-6 preplatenie text-center" title="Preplatenie" data-toggle="tooltip">
                                         <i class="fa fa-plus"></i>
                                         <span class="hodnota">31 325</span>€
                                     </div>
@@ -567,9 +542,11 @@
                         </div>
                         <div class="col-md-2">
                             <div class="row">
-                                <p class="hodnotenie-text text-center">Hodnotenie</p></div>
+                                <p class="hodnotenie-text text-center">Hodnotenie</p>
+                            </div>
                             <div class="row">
-                                <p class="hodnotenie-cislo text-right">7,2/10</p></div>
+                                <p class="hodnotenie-cislo text-right">7,2/10</p>
+                            </div>
                             <div class="row text-center">
                                 <i class="fa fa-2x fa-balance-scale"></i>
                                 <input type="checkbox">
@@ -579,7 +556,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row visible-lg visible-md">
             <div class="col-md-8">
                 <i class="fa fa-5x fa-long-arrow-left call-to-action go-back clickable"></i>
             </div>
@@ -587,7 +564,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row visible-lg visible-md">
     <div class="hore clickable">
         <i class="fa fa-5x fa-long-arrow-up call-to-action"></i>
     </div>
@@ -608,5 +585,5 @@
 </div>
 
 
-</body>
-</html>
+
+</body></html>

@@ -96,7 +96,7 @@ function buildComparisonRow(mortgages, rowName, propertyName, bestMax) {
 function buildComparisonTable(mortgages) {
     var table;
     if (mortgages.length > 1) {
-        table = $('<table class="table"></table>');
+        table = $('<table class="table table-responsive"></table>');
         var banks = $('<tr><th></th></tr>');
         _.forEach(mortgages, function (m) {
             banks.append($('<th>' + m.banka + '</th>'));
@@ -157,7 +157,7 @@ $(document).ready(function () {
 
     var porovnajBtn = $('#porovnajBtn');
     var movePorovnajBtn = debounce(function (e) {
-        if ($(this).scrollTop() > 150) {
+        if ($(this).scrollTop() > 110) {
             porovnajBtn.addClass('fixed');
         } else {
             porovnajBtn.removeClass('fixed');
