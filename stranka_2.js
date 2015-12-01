@@ -157,7 +157,7 @@ $(document).ready(function () {
 
     var porovnajBtn = $('#porovnajBtn');
     var movePorovnajBtn = debounce(function (e) {
-        if ($(this).scrollTop() > 110) {
+        if ($(this).scrollTop() > 90) {
             porovnajBtn.addClass('fixed');
         } else {
             porovnajBtn.removeClass('fixed');

@@ -198,6 +198,7 @@
   .porovnaj-btn-container > .porovnaj-btn.fixed {
     top: 0;
     left: 0;
+    border-radius: 0;
   }
 }
 @media (min-width: 992px) {
